@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- title of the page -->
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="logIn">
+        <div class="centerBox">
+            <div class="logInPagePic"></div>
+            <div class="logInbox">
+                <h1>Login to Your Account</h1>
+                <form class="logInForm" action="">
+                    <input type="text"  class="emailInput" name="email" placeholder="Email" required autofocus>
+                    <input type="text" class="changeToPhoneNumber" name="phoneNumber" placeholder="Phone Number"
+                        required>
+                    <span class="eyeIcon">
+                        <input type="password" class="loginPassword" name="password" placeholder="Password" required>
+                        <span >
+                            <div class="passwordShow" onclick="changePasswordVisibility()"></div>
+                            <div class="passwordhide" onclick="changePasswordVisibility()"></div>
+                        </span>
+
+                    </span>
+
+                    <input class="logInSubmit" type="submit" name="submit">
+                </form>
+                <div class="logInDividor">
+                    <span class="leftLine"></span>
+                    <p>OR</p>
+                    <span class="rightLine"></span>
+                </div>
+                <div class="logInOptions">
+                    <a onclick="changeLoginPreference()" class="loginWithPhoneNumber">Login using Phone Number</a>
+                    <a onclick="changeLoginPreference()" class="loginWithEmail">Login using Email</a>
+                    <a href="#" class="forgetPassword">Forget Password</a>
+                    <P>New here? <a href="#">Sign up</a></P>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>

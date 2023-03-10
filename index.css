@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#logIn{
+    height: 100vh;
+    width: 100%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    background-color: #006698;
+}
+.centerBox{
+    /* border: 5px solid green; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    width: 100%;
+    
+}
+.logInPagePic{
+    /* border: 1px solid red; */
+    /* width: 27%;  */
+    width: 450px;
+    height: 592px;
+    background: url("banking.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.logInbox{
+    /* border: 5px solid green; */
+    /* width: 45%; */
+    width: 650px;
+    height: 591px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+.logInbox h1{
+    /* border: 1px solid red; */
+    font-size: 3rem;
+    text-align: center;
+    margin: 35px 0 55px;
+}
+.logInForm{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 5px; */
+}
+.logInForm input{
+    width: 300px;
+    height: 35px;
+    margin: 5px;
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid;
+}
+.logInForm .loginPassword{
+    width: 265px;
+    border-right:none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius:0;
+    margin-right: 0;
+    
+}
+.eyeIcon{
+    display: flex;
+    /* border: 1px solid red; */
+    justify-content: center;
+    align-items: center;
+}
+.eyeIcon span{
+    border: 1px solid;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.passwordShow{
+    width: 25px; 
+    height: 25px;
+    background: url("view.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+.passwordhide{
+    width: 25px; 
+    height: 25px;
+    background: url("hide.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: none;
+}
+.changeToPhoneNumber{
+    display: none;
+}
+ .logInForm .logInSubmit{
+    /* border: 5px solid red; */
+    margin-top: 15px;
+    /* width: 150px; */
+    background-color: #006698;
+    color: white;
+    cursor: pointer;
+}
+.logInDividor{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+.leftLine{
+    width: 130px;
+    height: 0;
+    border: 1px solid rgb(142, 142, 142);
+    margin-right: 10px;
+
+}
+.rightLine{
+    width: 130px;
+    border: 1px solid rgb(142, 142, 142);
+    height: 0;
+    margin-left: 10px;
+}
+.logInOptions{
+    /* border:1px solid red; */
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+.logInOptions a{
+    text-decoration: none;
+}
+.loginWithPhoneNumber{
+    font-size: 1.1rem;
+    color:#006698;
+    cursor: pointer;
+    /* display: none; */
+}
+.loginWithEmail{
+    font-size: 1.1rem;
+    color:#006698;
+    display: none;
+    cursor: pointer;
+}
+.forgetPassword{
+    font-size: 1.1rem;
+    color:#006698;
+    margin-top: 30px;
+}
+.logInOptions p{
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #024364;
+    font-weight: 500;
+}
+.logInOptions p>a{
+    color: #006698;
+}
+
+@media screen and (max-width:480px) and (min-width:320px) {
+    .logInPagePic{
+        display: none;
+    }
+    .logInbox h1{
+        font-size: 2.5rem;
+    }
+}
+
