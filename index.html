@@ -21,10 +21,10 @@
                 <h1>Login to Your Account</h1>
                 <form class="logInForm" action="">
                     <div class="errorMessage"></div>
-                    <input type="text"  class="emailInput" name="email" placeholder="Email">
-                    <input type="number" class="changeToPhoneNumber" name="phoneNumber" placeholder="Phone Number">
+                    <input type="text"  class="emailInput" name="email" placeholder="Email" pattern="">
+                    <input type="text" class="changeToPhoneNumber" name="phoneNumber" placeholder="Phone Number" pattern="/^[0-9]{10}&/" >
                     <span class="eyeIcon">
-                        <input type="password" class="loginPassword" name="password" placeholder="Password">
+                        <input type="password" class="loginPassword" name="password" placeholder="Password" >
                         <span >
                             <div class="passwordShow" onclick="changePasswordVisibility()"></div>
                             <div class="passwordhide" onclick="changePasswordVisibility()"></div>
@@ -43,7 +43,7 @@
                     <a onclick="changeLoginPreference()" class="loginWithPhoneNumber">Login using Phone Number</a>
                     <a onclick="changeLoginPreference()" class="loginWithEmail">Login using Email</a>
                     <a href="#" class="forgetPassword">Forget Password</a>
-                    <P>New here? <a href="#">Sign up</a></P>
+                    <P>New here? <a href="signup.html">Sign up</a></P>
                 </div>
             </div>
         </div>
