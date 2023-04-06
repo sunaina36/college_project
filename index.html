@@ -7,24 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- css link -->
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
 
     <!-- title of the page -->
     <title>Document</title>
 </head>
 
 <body>
+
     <section id="logIn">
         <div class="centerBox">
             <div class="logInPagePic"></div>
             <div class="logInbox">
                 <h1>Login to Your Account</h1>
-                <form class="logInForm" action="">
+                <form class="logInForm">
                     <div class="errorMessage"></div>
-                    <input type="text"  class="emailInput" name="email" placeholder="Email" pattern="">
-                    <input type="text" class="changeToPhoneNumber" name="phoneNumber" placeholder="Phone Number" pattern="/^[0-9]{10}&/" >
+                    <input type="text"  class="emailAndPhoneInput" name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email Address" required>
+                    <!-- <input type="text" class="changeToPhoneNumber" name="phoneNumber" placeholder="Phone Number" pattern="[0-9]{10}"  title="Please enter a valid Phone Number" size="10"> -->
                     <span class="eyeIcon">
-                        <input type="password" class="loginPassword" name="password" placeholder="Password" >
+                        <input type="password" class="loginPassword" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                         <span >
                             <div class="passwordShow" onclick="changePasswordVisibility()"></div>
                             <div class="passwordhide" onclick="changePasswordVisibility()"></div>
@@ -32,7 +33,7 @@
 
                     </span>
 
-                    <input class="logInSubmit" type="submit">
+                    <input class="logInSubmit" type="submit" onclick="formSubmit()">
                 </form>
                 <div class="logInDividor">
                     <span class="leftLine"></span>
@@ -40,8 +41,8 @@
                     <span class="rightLine"></span>
                 </div>
                 <div class="logInOptions">
-                    <a onclick="changeLoginPreference()" class="loginWithPhoneNumber">Login using Phone Number</a>
-                    <a onclick="changeLoginPreference()" class="loginWithEmail">Login using Email</a>
+                    <a onclick="changeLoginPreference()" class="loginChoice">Login using Phone Number</a>
+                    <!-- <a onclick="changeLoginPreference()" class="loginWithEmail">Login using Email</a> -->
                     <a href="#" class="forgetPassword">Forget Password</a>
                     <P>New here? <a href="signup.html">Sign up</a></P>
                 </div>
@@ -53,7 +54,8 @@
 
 
 
-    <script src="index.js"></script>
+    <script src="./index.js"></script>
+    <!-- <script src="index_node.js"></script> -->
 </body>
 
 </html>

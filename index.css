@@ -155,17 +155,11 @@ input[type=number] {
 .logInOptions a{
     text-decoration: none;
 }
-.loginWithPhoneNumber{
+.loginChoice{
     font-size: 1.1rem;
     color:#006698;
     cursor: pointer;
     /* display: none; */
-}
-.loginWithEmail{
-    font-size: 1.1rem;
-    color:#006698;
-    display: none;
-    cursor: pointer;
 }
 .forgetPassword{
     font-size: 1.1rem;
