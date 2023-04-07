@@ -2,8 +2,8 @@ let emailAndPhoneInput=document.querySelector(".emailAndPhoneInput");//input tag
 let changePreference = document.querySelector(".loginChoice"); // link for login text
 // let changePreferenceToEmail = document.querySelector(".loginWithEmail");// link for login with email
 let logInPassword = document.querySelector(".loginPassword");// password input
-let showPassword = document.querySelector(".passwordShow");// show eye icon
-let hidePassword = document.querySelector(".passwordhide");// hide eye icon
+let passwordVisibility = document.querySelector(".passwordVisibility");// show eye icon
+// let hidePassword = document.querySelector(".passwordhide");// hide eye icon
 
 // function to change preference of login
 function changeLoginPreference(){
@@ -39,7 +39,7 @@ function changeLoginPreference(){
         // // changePreferenceToEmail.style.display = "block";
         // emailAndPhoneInput.name = "Email";
         // emailAndPhoneInput.setAttribute("placeholder","Email");
-        console.log(emailAndPhoneInput.name);
+        // console.log(emailAndPhoneInput.name);
         
     // }
     // else{
@@ -56,18 +56,27 @@ function changeLoginPreference(){
 
 // function to show and hide the password
 function changePasswordVisibility(){
-    if(hidePassword.style.display == "none"|| hidePassword.style.display == ""){
-        showPassword.style.display = "none";
-        logInPassword.type = "text";
-        console.log(hidePassword.style.display);
-        hidePassword.style.display = "block";
+    if(passwordVisibility.style.backgroundImage =='url("view.png")'||passwordVisibility.style.backgroundImage ==""){
+        passwordVisibility.style.backgroundImage='url("hide.png")';
+        logInPassword.type="text";
     }
-    else{
-        showPassword.style.display = "block";
-        logInPassword.type = "password";
-        hidePassword.style.display = "none";
+    else
+    {
+        passwordVisibility.style.backgroundImage='url("view.png")';
+        logInPassword.type="password";
+    }
+    // if(hidePassword.style.display == "none"|| hidePassword.style.display == ""){
+    //     showPassword.style.display = "none";
+    //     logInPassword.type = "text";
+    //     console.log(hidePassword.style.display);
+    //     hidePassword.style.display = "block";
+    // }
+    // else{
+    //     showPassword.style.display = "block";
+    //     logInPassword.type = "password";
+    //     hidePassword.style.display = "none";
 
-    }
+    // }
 }
 
 
