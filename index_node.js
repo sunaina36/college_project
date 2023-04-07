@@ -6,20 +6,29 @@ import fs from "fs";
 // const http = require("http");
 // const url = require("url");
 // const fs = require("fs");
-let index = fs.readFileSync("index.html");
-let css = fs.readFileSync("index.css");
-let javaScript = fs.readFileSync("index.js");
+let loginHtml = fs.readFileSync("login.html");
+let loginCss = fs.readFileSync("login.css");
+let loginJavaScript = fs.readFileSync("login.js");
+let signupHtml=fs.readFileSync("signup.html");
+let signupCss=fs.readFileSync("signup.css");
 const server = http.createServer((req, res) => {
   console.log("server started");
   switch (req.url) {
     case "/":
-      res.end(index);
+      res.end(loginHtml);
       break;
-    case "/index.css":
-        res.end(css);
+    case "/login.css":
+        res.end(loginCss);
         break;
-    case "/index.js":
-      res.end(javaScript);
+    case "/login.js":
+      res.end(loginJavaScript);
+      break;
+
+    case "/signup.html":
+      res.end(signupHtml);
+      break;
+    case "/signup.css":
+      res.end(signupCss);
       break;
   }
   console.log(req.url);
@@ -27,4 +36,4 @@ const server = http.createServer((req, res) => {
   let qdata = q.query;
   console.log(qdata);
 });
-server.listen(8080);
+server.listen(8000);
