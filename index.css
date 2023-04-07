@@ -96,15 +96,15 @@ input[type=number] {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.passwordShow{
+.passwordVisibility{
     width: 25px; 
     height: 25px;
-    background: url("view.png");
+    background-image: url("view.png");
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
 }
-.passwordhide{
+/* .passwordhide{
     width: 25px; 
     height: 25px;
     background: url("hide.png");
@@ -112,7 +112,7 @@ input[type=number] {
     background-repeat: no-repeat;
     cursor: pointer;
     display: none;
-}
+} */
 .changeToPhoneNumber{
     display: none;
 }
