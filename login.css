@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
 }
-#logIn{
+
+#logIn {
     height: 100vh;
     width: 100%;
     /* border: 1px solid red; */
@@ -11,15 +12,17 @@
     align-items: center;
     background-color: #006698;
 }
-.centerBox{
+
+.centerBox {
     /* border: 5px solid green; */
     display: flex;
     /* align-items: center; */
     justify-content: center;
     width: 100%;
-    
+
 }
-.logInPagePic{
+
+.logInPagePic {
     /* border: 1px solid red; */
     /* width: 27%;  */
     width: 450px;
@@ -27,31 +30,43 @@
     background: url("banking.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+
 }
-.logInbox{
+
+.logInbox {
     /* border: 5px solid green; */
     /* width: 45%; */
     width: 650px;
     height: 591px;
     background-color: white;
     display: flex;
+    align-items: center;
     flex-direction: column;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
 }
-.logInbox h1{
+
+.logInbox h1 {
     /* border: 1px solid red; */
     font-size: 3rem;
     text-align: center;
     margin: 35px 0 55px;
 }
-.logInForm{
+
+.logInForm {
     /* border: 1px solid red; */
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     /* padding: 5px; */
+    position: relative;
 }
-.logInForm input{
+
+.logInForm input {
     width: 300px;
     height: 35px;
     margin: 5px;
@@ -60,33 +75,23 @@
     border-radius: 5px;
     border: 1px solid rgb(142, 142, 142);
 }
-.logInForm .loginPassword{
+
+.logInForm .loginPassword {
     width: 265px;
-    border-right:none;
+    border-right: none;
     border-top-right-radius: 0;
-    border-bottom-right-radius:0;
+    border-bottom-right-radius: 0;
     margin-right: 0;
-    
-}
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
 }
-
-.eyeIcon{
+.eyeIcon {
     display: flex;
     /* border: 1px solid red; */
     justify-content: center;
     align-items: center;
 }
-.eyeIcon span{
+
+.eyeIcon span {
     border: 1px solid rgb(142, 142, 142);
     width: 35px;
     height: 35px;
@@ -96,14 +101,16 @@ input[type=number] {
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-.passwordVisibility{
-    width: 25px; 
+
+.passwordVisibility {
+    width: 25px;
     height: 25px;
     background-image: url("view.png");
     background-size: cover;
     background-repeat: no-repeat;
     cursor: pointer;
 }
+
 /* .passwordhide{
     width: 25px; 
     height: 25px;
@@ -113,38 +120,40 @@ input[type=number] {
     cursor: pointer;
     display: none;
 } */
-.changeToPhoneNumber{
-    display: none;
-}
- .logInForm .logInSubmit{
+.logInForm .logInSubmit {
     /* border: 5px solid red; */
     margin-top: 15px;
-    /* width: 150px; */
+    /* width: 300px; */
     background-color: #006698;
     color: white;
     cursor: pointer;
+    font-weight: 500;
 }
-.logInDividor{
+
+.logInDividor {
     /* border: 1px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
 }
-.leftLine{
+
+.leftLine {
     width: 130px;
     height: 0;
     border: 1px solid rgb(142, 142, 142);
     margin-right: 10px;
 
 }
-.rightLine{
+
+.rightLine {
     width: 130px;
     border: 1px solid rgb(142, 142, 142);
     height: 0;
     margin-left: 10px;
 }
-.logInOptions{
+
+.logInOptions {
     /* border:1px solid red; */
     display: flex;
     flex-direction: column;
@@ -152,106 +161,126 @@ input[type=number] {
     justify-content: center;
     align-items: center;
 }
-.logInOptions a{
+
+.logInOptions a {
     text-decoration: none;
 }
-.loginChoice{
+
+.loginChoice {
     font-size: 1.1rem;
-    color:#006698;
+    color: #006698;
     cursor: pointer;
     /* display: none; */
 }
-.forgetPassword{
+
+.forgetPassword {
     font-size: 1.1rem;
-    color:#006698;
+    color: #006698;
     margin-top: 30px;
 }
-.logInOptions p{
+
+.logInOptions p {
     margin-top: 30px;
     font-size: 1.1rem;
     color: #024364;
     font-weight: 500;
 }
-.logInOptions p>a{
+
+.logInOptions p>a {
     color: #006698;
 }
 
 @media screen and (max-width:480px) and (min-width:320px) {
-    #logIn{
+    #logIn {
         height: 90vh;
         /* border: 1px solid red; */
     }
-    .logInPagePic{
+
+    .logInPagePic {
         display: none;
     }
-    .logInbox{
+
+    .logInbox {
         display: flex;
         align-items: center;
+        height: 100%;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
         /* justify-content: center; */
     }
-    .logInbox h1{
+
+    .logInbox h1 {
         /* border: 1px solid red; */
         font-size: 2.5rem;
         width: 80%;
     }
-    .centerBox{
+
+    .centerBox {
         /* border: 2px solid green; */
         height: 90vh;
     }
-    .logInbox{
-        height: 100%;
-    }
 }
+
 @media screen and (max-width:1100px) and (min-width:801px) {
-    .centerBox{
+    .centerBox {
         width: 100%;
     }
-    .logInPagePic{
+
+    .logInPagePic {
         display: none;
     }
-    .logInbox{
+
+    .logInbox {
         max-width: 70%;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
     }
 
 }
+
 @media screen and (max-width:800px) and (min-width:685px) {
-    .centerBox{
+    .centerBox {
         width: 100%;
     }
-    .logInbox h1{
+
+    .logInbox h1 {
         width: 75%;
         /* border: 1px solid red; */
     }
-    .logInbox{
+
+    .logInbox {
         display: flex;
         align-items: center;
+        max-width: 90%;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
     }
-    .logInPagePic{
+
+    .logInPagePic {
         display: none;
     }
-    .logInbox{
-        max-width: 90%;
-    }
-    
+
 }
+
 @media screen and (max-width:684px) and (min-width:481px) {
-    .centerBox{
+    .centerBox {
         width: 100%;
     }
-    .logInbox h1{
+
+    .logInbox h1 {
         width: 85%;
         /* border: 1px solid red; */
     }
-    .logInbox{
+
+    .logInbox {
         display: flex;
         align-items: center;
+        max-width: 90%;
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
     }
-    .logInPagePic{
+
+    .logInPagePic {
         display: none;
     }
-    .logInbox{
-        max-width: 90%;
-    }
 }
-
-
