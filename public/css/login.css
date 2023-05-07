@@ -27,7 +27,7 @@
     /* width: 27%;  */
     width: 450px;
     height: 592px;
-    background: url("banking.jpg");
+    background: url("/banking.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom-left-radius: 25px;
