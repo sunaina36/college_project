@@ -56,13 +56,13 @@ function changeLoginPreference(){
 
 // function to show and hide the password
 function changePasswordVisibility(){
-    if(passwordVisibility.style.backgroundImage =='url("view.png")'||passwordVisibility.style.backgroundImage ==""){
-        passwordVisibility.style.backgroundImage='url("hide.png")';
+    if(passwordVisibility.style.backgroundImage =='url("../images/view.png")'||passwordVisibility.style.backgroundImage ==""||passwordVisibility.style.backgroundImage=='url("./static/images/view.png")'){
+        passwordVisibility.style.backgroundImage='url("./static/images/hide.png")';
         logInPassword.type="text";
     }
     else
     {
-        passwordVisibility.style.backgroundImage='url("view.png")';
+        passwordVisibility.style.backgroundImage='url("./static/images/view.png")';
         logInPassword.type="password";
     }
     // if(hidePassword.style.display == "none"|| hidePassword.style.display == ""){

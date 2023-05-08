@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./static/css/signup.css">
+    <!-- title of the page -->
+    <title>Sign up</title>
+</head>
+
+<body>
+    <section id="SignupPage">
+        <div class="signupBox">
+            <h1>Sign In</h1>
+
+            <form class="firstForm" method="POST" action="/signup">
+                <div class="progressDots">
+                    <span class="circles firstCircle">1</span>
+                    <span class="lines firstLine"></span>
+                    <span class="circles secondCircle">2</span>
+                    <span class="lines secondLine"></span>
+                    <span class="circles thirdCircle">3</span>
+                </div>
+                <div class="Fform">
+                    <input type="text" name="firstName" placeholder="First Name *" class="firstName" onblur="getFirstName(this)">
+                    <input type="text" name="lastName" placeholder="Last Name *" class="lastName"><br>
+                    <input type="text" name="phoneNumber" placeholder="Phone Number *" class="phoneNumber">
+                    <input type="text" name="email" placeholder="Email *" class="email" onblur="getEmail(this);"><br>
+                    <input text="text" name="aadharNumber" placeholder="Aadhar Number *" class="aadharNumber">
+                    <input text="text" name="panNumber" placeholder="Pan Number *" class="Pan Number"><br>
+                    <input type="text" name="dateOfBirth" placeholder="Birth Date *" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" class="dateOfBirth">
+                </div>
+                <!-- {{!-- <div class="Sform">
+                    <label for="aadharNumber">Aadhar Card Image *</label>
+                    <input type="file" name="aadharNumber" id="aadharNumber"><br>
+                    <label for="panNumber">Pan Number card Image *</label>
+                    <input type="file" name="panNumber" id="panNumber">
+                </div> --}} -->
+                <!-- {{!-- <div class="Tform">
+                    <h1>OTP Verification</h1>
+                    <p>we will be sending OTP to your Mail</p>
+                    <div class="OtpBox">
+                        <form >
+                            <p>Please Enter your Mail</p>
+                            <input type="text" class="OtpEmail" placeholder="Email" name="OtpEmail">
+                            <input type="text" class="OTP">
+                            <button class="OtpSubmit" onclick="sendOtp(this);">Continue</button>
+                            <input type="submit" >
+                        </form>
+                    </div>
+
+                </div> --}}
+                 <button onclick="formSubimt" type="submit" class="formButton">Next</button>
+            </form> -->
+            <p class="backTOLogin">Already have an account?<a href="./login">LogIn</a></p>
+            <button onclick="formSubimt" type="submit" class="formButton">Next</button>
+
+
+
+
+
+
+            </form>
+
+        </div>
+    </section>
+
+    <script src="./static/js/signup.js" type="commonjs"></script>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#SignupPage{
+    width: 100%;
+    height: 100dvh;
+    /* border: 1px solid red; */
+    background-color: #006698;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signupBox{
+    border: 1px solid rgb(142, 142, 142);
+    width: 50%;
+    height: 70dvh;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+}
+.signupBox h1{
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.progressDots{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.circles{
+    border: 1px solid rgb(142, 142, 142);
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 0;
+    text-align: center;
+    padding-top: 2px;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: rgb(142, 142, 142);
+}
+.lines{
+    border: 1px solid rgb(142, 142, 142);
+    display: inline-block;
+    width: 150px;
+    margin-left: 0;
+    border-radius: 10px;
+
+}
+.firstCircle{
+    background-color: #ff8c00;
+    color: white;
+}
+
+.firstForm{
+    /* border:1px solid red; */
+    width: 100%;
+}
+.Fform{
+    /* border: 1px solid red; */
+    padding-left: 50px;
+    margin-top: 50px;
+    /* display: none; */
+
+}
+.Fform input{
+
+    margin-right: 50px;
+}
+
+.Sform{
+    padding-left: 50px;
+    margin-top:60px;
+    display: none;
+}
+.Sform label{
+    /* border: 1px solid red; */
+    font-size: 1.1rem;
+    width: 130px;
+    display: inline-block;
+}
+
+.Tform{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* display: none; */
+}
+.Tform h1{
+    font-size: 1.5rem;
+    /* border: 1px solid red; */
+    padding: 0;
+}
+.Tform p{
+    /* border: 1px solid green; */
+    font-size: 1.1rem;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.OTP{
+    width: 100px;
+}
+.OtpBox{
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+.OtpSubmit{
+    background-color: #006698;
+    color: white;
+}
+
+.firstForm input{
+    width: 300px;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(142, 142, 142);
+    font-size: 1rem;
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.backTOLogin{
+    /* border: 1px solid black; */
+    font-size: 1.1rem;
+    position:absolute;
+    left: 50px;
+    bottom: 60px;
+}
+
+.formButton{
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+    position: absolute;
+    right: 50px;
+    bottom: 40px;
+    background-color: #006698;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
