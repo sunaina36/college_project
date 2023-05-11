@@ -15,7 +15,7 @@
 .signupBox{
     border: 1px solid rgb(142, 142, 142);
     width: 50%;
-    height: 70dvh;
+    height: 65dvh;
     background-color: white;
     border-radius: 20px;
     position: relative;
@@ -26,40 +26,6 @@
     font-size: 2.5rem;
     padding-top: 30px;
     padding-bottom: 20px;
-}
-
-.progressDots{
-    /* border: 1px solid red; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-.circles{
-    border: 1px solid rgb(142, 142, 142);
-    display: inline-block;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    margin-right: 0;
-    text-align: center;
-    padding-top: 2px;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: rgb(142, 142, 142);
-}
-.lines{
-    border: 1px solid rgb(142, 142, 142);
-    display: inline-block;
-    width: 150px;
-    margin-left: 0;
-    border-radius: 10px;
-
-}
-.firstCircle{
-    background-color: #ff8c00;
-    color: white;
 }
 
 .firstForm{

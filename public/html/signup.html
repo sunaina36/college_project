@@ -18,22 +18,15 @@
             <h1>Sign In</h1>
 
             <form class="firstForm" method="POST" action="/signup">
-                <div class="progressDots">
-                    <span class="circles firstCircle">1</span>
-                    <span class="lines firstLine"></span>
-                    <span class="circles secondCircle">2</span>
-                    <span class="lines secondLine"></span>
-                    <span class="circles thirdCircle">3</span>
-                </div>
                 <div class="Fform">
-                    <input type="text" name="firstName" placeholder="First Name *" class="firstName" onblur="getFirstName(this)">
-                    <input type="text" name="lastName" placeholder="Last Name *" class="lastName"><br>
+                    <input type="text" name="firstName" placeholder="First Name *" class="firstName">
+                    <input type="text" name="dateOfBirth" placeholder="Birth Date *" onfocus="(this.type='date')"
+                        onblur="(this.type='text')" class="dateOfBirth">
                     <input type="text" name="phoneNumber" placeholder="Phone Number *" class="phoneNumber">
                     <input type="text" name="email" placeholder="Email *" class="email" onblur="getEmail(this);"><br>
                     <input text="text" name="aadharNumber" placeholder="Aadhar Number *" class="aadharNumber">
                     <input text="text" name="panNumber" placeholder="Pan Number *" class="Pan Number"><br>
-                    <input type="text" name="dateOfBirth" placeholder="Birth Date *" onfocus="(this.type='date')"
-                        onblur="(this.type='text')" class="dateOfBirth">
+                    
                 </div>
                 <!-- {{!-- <div class="Sform">
                     <label for="aadharNumber">Aadhar Card Image *</label>

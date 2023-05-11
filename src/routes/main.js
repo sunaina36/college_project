@@ -1,7 +1,7 @@
 const express=require('express');
 const User = require('../modals/userdata');
 const otpAuth = require('../controller/otpAuth');
-const user = require('../controller/user');
+const otp = require('../controller/otp');
 const path = require('path');
 const route=express.Router();
 route
@@ -17,7 +17,10 @@ route
 .get('/login',(req,res)=>{
     res.sendFile(path.join(__dirname,'../../public/html/login.html'));
 })
-.post('/signup',otpAuth.usersD)
-.post('/otp',otpAuth.userTypeOtp)
+.get('/otp',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../../public/html/otp.html'));
+})
+.post('/signup',otpAuth)
+.post('/otp',otp.userTypedOTP)
 
-module.exports={route,user};
+module.exports={route};

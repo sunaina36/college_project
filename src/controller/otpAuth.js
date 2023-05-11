@@ -1,66 +1,40 @@
-const email = require("./Email");
-const User = require('../modals/userdata');
-const path = require('path');
-const user={};
-// const Users=require('./user');
-var OTP;
-function generateOtp() {
-  let digit = "0123456789";
-  let OTP = "";
-  for (let i = 0; i < 6; i++) {
-    OTP += digit[Math.floor(Math.random() * 10)];
-  }
-  return OTP;
-}
-var userOtp;
-let userTypeOtp = (req, res) => {
-     userOtp = req.body.otp;
-    checkotp();
-};
-// let jai = (req,res)=>{
+// const userData=require('../modals/userdata');
+const otp = require('./otp');
+const Email = require('./Email');
+const users = require('./users');
+
+
+
+let usersD = function(req,res){
   
+  users.user.firstName=req.body.firstName,
+  users.user.DOB=req.body.dateOfBirth,
+  users.user.phoneNumber=req.body.phoneNumber,
+  users.user.email=req.body.email,
+  users.user.aadharNumber=req.body.aadharNumber,
+  users.user.panNumber=req.body.panNumber
+  console.log(users.user);
+  var OTP=otp.generateOTP();
+  otp.getGeneratedotp(OTP);
+  Email(users.user.firstName,users.user.email,OTP);
+  res.redirect('/otp');
+  
+}
+
+module.exports=usersD;
+
+// try{
+//   let userDetails = new userData({
+//     firstName:req.body.firstName,
+//   DOB:req.body.dateOfBirth,
+//   phoneNumber:req.body.phoneNumber,
+//   email:req.body.email,
+//   aadharNumber:req.body.aadharNumber,
+//   panNumber:req.body.panNumber
+//   });
+//   console.log(userDetails);
+//   userDetails.save();
+//   res.redirect('/login');
+// }catch(error){
+//   console.log(error);
 // }
-
-let authen = function (name, userEmail) {
-  OTP = generateOtp();
-  email.send(name, userEmail,OTP);
-};
-
-let usersD=(req,res)=>{
-
-    user.firstName=req.body.firstName;
-    user.lastName=req.body.lastName;
-    user.phoneNumber=req.body.phoneNumber;
-    user.email=req.body.email;
-    user.aadharNumber=req.body.aadharNumber;
-    user.panNumber=req.body.panNumber;
-    user.DOB=req.body.dateOfBirth;
-    authen(user.firstName,user.email);
-    res.sendFile(path.join(__dirname,'../../public/html/otp.html'))
-}
-function checkotp(){
-  if(userOtp==OTP){
-      // Users.userDetail();
-      try{
-      
-        const userdata= new User({
-            firstName:user.firstName,
-            lastName:user.lastName,
-            phoneNumber:user.phoneNumber,
-            email:user.email,
-            aadharNumber:user.aadharNumber,
-            panNumber:user.panNumber,
-            DOB:user.DOB
-        });
-        userdata.save();
-      
-    }catch(error){
-        console.log(error);
-    }
-  }
-  else{
-      console.log("wrong");
-  }
-}
-
-module.exports = { userTypeOtp,usersD };

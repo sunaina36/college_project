@@ -6,8 +6,8 @@ const userData = new Schema({
         type:String,
         required:true
     },
-    lastName:{
-        type:String,
+    DOB:{
+        type:Date,
         required:true
     },
     phoneNumber:{
@@ -29,11 +29,8 @@ const userData = new Schema({
         type:String,
         required:true,
         unique:true
-    },
-    DOB:{
-        type:Date,
-        required:true
     }
+    
 });
 
 const User = mongoose.model('User',userData);

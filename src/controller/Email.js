@@ -13,9 +13,19 @@ let send=function(name,email,OTP){
   var mailOption = {
     from: "jaishankar.a1603@gmail.com",
     to: email,
-    subject: "Sending Email using Node.js",
-    text: `hello ${name} 
-    your OTP is ${OTP}`
+    subject: "PayForU One Time Password(OTP)",
+    text: `hello ${name},
+
+Greetings from PayForU!
+
+your OTP to Signup in PayForU is: ${OTP}
+    
+Please DO NOT SHARE This with anyone
+    
+Regards,
+    
+PayForU Team
+`
   };
     transporter.sendMail(mailOption, function(error, info){
         if (error) {
@@ -25,7 +35,7 @@ let send=function(name,email,OTP){
         }
 });
 }
-module.exports={send};
+module.exports=send;
 // console.log(signup_page);
 // button.onclick=function(){
 //     send();
