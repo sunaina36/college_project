@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./dashboard.css">
+    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="./cards.css">
+    <link rel="stylesheet" href="./debitCard.css">
+    <link rel="stylesheet" href="./transaction.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <title>Pay4U</title>
+</head>
+
+<body>
+    <div class="top-nav">
+        <div class="left-nav">
+            <h1>Pay4U</h1>
+        </div>
+        <div class="right-nav">
+            <div class="username">Jatin</div>
+            <div class="profile-photo"><img src="./user.png" alt=""></div>
+
+        </div>
+    </div>
+    <div class="main-window">
+        <div class="side-nav">
+            <div>
+                <ul class="nav-list">
+                    <li class="nav-items">Dashboard</li>
+                    <li class="nav-items">Transfer</li>
+                    <li class="nav-items">Cards</li>
+                    <li class="nav-items">Transaction History</li>
+                    <li class="nav-items">Profile</li>
+                    <li class="nav-items">Logout</li>
+                </ul>
+            </div>
+        </div>
+        <section id="dashboard">
+            <h1 class="section-heading">Dashboard</h1>
+            <div class="account-info-cards">
+                <div class="account-card">
+                    <div class="account-card-heading">
+                        <p>Balance</p>
+                    </div>
+                    <div class="account-card-body">
+                        <p class="amount">Rs
+                        <p class="inner-amount">1000</p>
+                        </p>
+                    </div>
+                    <!-- <div class="account-card-footer"><p>Your Total Balance</p></div> -->
+                </div>
+                <div class="account-card">
+                    <div class="account-card-heading">
+                        <p>Debited This Month</p>
+                    </div>
+                    <div class="account-card-body debited-amount">
+                        <p class="amount">Rs
+                        <p class="inner-amount">200</p>
+                        </p>
+                    </div>
+                    <!-- <div class="account-card-footer"><p class="amount"><p class="inner-amount">-1000</p> rs Since Last Month</p></div> -->
+                </div>
+                <div class="account-card">
+                    <div class="account-card-heading">
+                        <p>Credited This Month</p>
+                    </div>
+                    <div class="account-card-body credited-amount">
+                        <p class="amount">Rs
+                        <p class="inner-amount">0</p>
+                        </p>
+                    </div>
+                    <!-- <div class="account-card-footer"><p class="amount"><p class="inner-amount">300</p> rs Since Last Month</p></div> -->
+                </div>
+            </div>
+            <div class="accounts-graphs">
+                <div class="graph-card">
+                    <div class="graph-card-heading">
+                        <p>Transaction Graph</p>
+                    </div>
+                    <div class="graph-card-body">
+                        <p>Overview Of Daily Transaction</p>
+                    </div>
+                    <div class="graph">
+                        <p></p>
+                    </div>
+                </div>
+                <div class="graph-card">
+                    <div class="graph-card-heading">
+                        <p>Cash Flow Graph</p>
+                    </div>
+                    <div class="graph-card-body">
+                        <p>Overview Of Total Cash Flow</p>
+                    </div>
+                    <div class="graph">
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Profile">
+            <h1 class="section-heading">Profile</h1>
+            <div class="main-content">
+                <div class="profile-index">
+                    <div class="profile-mountain-photo">
+                        <div class="profile-profile-photo"></div>
+                    </div>
+                    <div class="profile-heading">
+                        <p>Jatin</p>
+                    </div>
+                    <div class="gender">
+                        <p>Male</p>
+                    </div>
+                    <div class="profile-subheading">
+                        <p>The purpose of our lives is to be happy</p>
+                    </div>
+                </div>
+                <div class="balance-account-detail-index">
+                    <div class="balance-index">
+                        <div class="balance">
+                            <p>Balance</p>
+                            <p class="currency">&#8377</p>
+                        </div>
+                        <div class="balance-rupees">1700 &#8377</div>
+                        <div class="total-balance">Your Total Balance</div>
+                    </div>
+                    <div class="account-detail-index">
+                        <div class="all-account-detail">
+                            <p>Account Detail</p>
+                            <p></p>
+                        </div>
+                        <div class="account-no">
+                            <p>Account No</p>
+                            <p>410211106420</p>
+                        </div>
+                        <div class="account-type">
+                            <p>Account Type</p>
+                            <p>Saving</p>
+                        </div>
+                        <div class="adhar-number">
+                            <p>Adhar Number</p><p>1234567</p>
+                        </div>
+                        <div class="pan-number">
+                            <p>Pan Number</p>
+                            <p>WERTY1234Q</p>
+                        </div>
+                        <div class="account-status">
+                            <p>Account status</p>
+                            <p>Active</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="details-user">
+                    <div class="login-details">
+                        <div class="login-details-index">
+                            <p>Login Details</p>
+                        </div>
+                        <div class="username-index">
+                            <p>username</p>
+                            <div class="username-name"><p>Jatin</p></div>
+                        </div>
+                        <div class="password">
+                            <p>Password</p><p>*********</p>
+                        </div>
+                    </div>
+                    <div class="contact-details">
+                        <div class="contact"><p>Contact Details</p></div>
+                        <div class="mobile-no"><p>Mobile No</p><p>9044327865</p></div>
+                        <div class="email"><p>Email</p><p>Jatin.singla8607@gmail.com</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="cards">
+            <h1 class="card-heading">Cards</h1>
+            <div class="card-information-section">
+                <div class="debit-card-info">
+                    <h2 class="debit-card-heading">Your Debit Card</h2>
+                    <div class="container">
+                        <div class="debit-card front-face">
+                          <header>
+                            <span class="logo">
+                              <!--<img src="images/logo.png" alt="" />-->
+                              <h5>Master Card</h5>
+                            </span>
+                           <!--<img src="images/chip.png" alt="" class="chip" />-->
+                          </header>
+                
+                          <div class="card-details">
+                            <div class="name-number">
+                              <h6>Card Number</h6>
+                              <h5 class="number">8050 2030 3020 5040</h5>
+                              <h5 class="name">Jatin</h5>
+                            </div>
+                
+                            <div class="valid-date">
+                              <h6>Valid Thru</h6>
+                              <h5>05/28</h5>
+                            </div>
+                          </div>
+                        </div>
+                
+                        <div class="debit-card back-face">
+                          <h6>
+                            For customer service call +91 9999999999 or email at
+                            emailus@gmail.com
+                          </h6>
+                          <span class="magnetic-strip"></span>
+                          <div class="signature"><i>005</i></div>
+                          <h5>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
+                            maiores sed doloremque nesciunt neque beatae voluptatibus doloribus.
+                            Libero et quis magni magnam nihil temporibus? Facere consectetur
+                            dolore reiciendis et veniam.
+                          </h5>
+                        </div>
+                      </div>
+                </div>
+                <div class="debit-card-details">
+                    <h2 class="debit-card-heading">Your Debit Card Details</h2>
+                    <ul class="debit-details-list">
+                        <li class="debit-detail-item">
+                            <p>Account Number</p>
+                            <p>123456</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>Debit Card Number</p>
+                            <p>8050203030205040</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>Name</p>
+                            <p>Jatin</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>CVV Number</p>
+                            <p>005</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>Issued Date</p>
+                            <p>10/1/2023</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>Expiry Date</p>
+                            <p>05/2028</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>Card Status</p>
+                            <p>Active</p>
+                        </li>
+                        <li class="debit-detail-item">
+                            <p>Verification Status</p>
+                            <p>Yes</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="transaction-history">
+            <h1 class="transaction-heading">Transaction History</h1>
+            <div class="transaction-table-div">
+                <h3>Overview of All Transaction</h3>
+                <table class="transaction-table">
+                    <tr>
+                        <th class="table-heading">Sr.No</th>
+                        <th class="table-heading">Name</th>
+                        <th class="table-heading">Account No</th>
+                        <th class="table-heading">Date</th>
+                        <th class="table-heading">Amount</th>
+                        <th class="table-heading">Status</th>
+                    </tr>
+                    <tr>
+                        <td class="user-data">1</td>
+                        <td class="user-data">Kunal Bahri</td>
+                        <td class="user-data">525211930120</td>
+                        <td class="user-data">2023-01-22</td>
+                        <td class="user-data">-100</td>
+                        <td class="user-data">Debited</td>
+                    </tr>
+                    <tr>
+                        <td class="user-data">2</td>
+                        <td class="user-data">Kunal Bahri</td>
+                        <td class="user-data">525211930120</td>
+                        <td class="user-data">2023-01-22</td>
+                        <td class="user-data">-100</td>
+                        <td class="user-data">Debited</td>
+                    </tr>
+                    <tr>
+                        <td class="user-data">3</td>
+                        <td class="user-data">Kunal Bahri</td>
+                        <td class="user-data">525211930120</td>
+                        <td class="user-data">2023-01-22</td>
+                        <td class="user-data">-100</td>
+                        <td class="user-data">Debited</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+<script src="./dash.js"></script>
+</body>
+
+</html>

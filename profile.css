@@ -1,0 +1,207 @@
+#Profile{
+    /* display: none; */
+    width: 80%;
+    /* display: flex; */
+    }
+.profile-index{
+    border: 1px solid black;
+    width: 30%;
+    height: 70%;
+    border-radius: 10px;
+    /* margin-top: 30px; */
+    display: flex;
+    flex-direction: column;
+    /* display: none; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.main-content{
+    border-bottom: 1px solid green;
+    display: flex;
+    height: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+.profile-mountain-photo{
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    align-items: center;
+    
+}
+.profile-profile-photo{
+    border: 1px solid orange;
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    /* position: absolute;
+    left: 40%;
+    top: 62%; */
+    transform: translateY(60px);
+}
+.profile-heading{
+    /* border: 1px solid pink; */
+    margin-top:80px;
+    font-size: 30px;
+    text-align: center;
+}
+.gender{
+    /* border: 1px solid orange; */
+    height: 20px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+}
+.profile-subheading{
+    /* border: 1px solid orange; */
+    height: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+.balance-account-detail-index{
+    /* margin-top: 30px; */
+    /* border: 1px solid orange; */
+    width: 30%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.balance-index{
+    border: 1px solid black;
+    height: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-left:10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.account-detail-index{
+    border: 1px solid black;
+    margin-top: 20px;
+    height: 65%;
+    border-radius: 10px;
+    padding-left:10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+.details-user{
+    /* margin-top: 30px; */
+    /* border: 1px solid green; */
+    width: 30%;
+    height: 70%;
+    /* display: flex;
+    flex-direction: row; */
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+.login-details{
+    /* margin-top: 20px; */
+    border: 1px solid black;
+    height: 30%;
+    border-radius: 10px;
+    padding-left:10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contact-details{
+    border: 1px solid black;
+    margin-top: 20px;
+    height: 30%;
+    border-radius: 10px;
+    padding-left:10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.balance{
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 20px;
+   
+}
+.currency{
+    color: green;
+    font-weight: 500;
+}
+.balance-rupees{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    font-size: 25px;
+    color: green;
+}
+.all-account-detail{
+    /* border: 1px solid red; */
+    margin-top: 20px;
+    font-size: 20px;
+}
+.account-no{
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.account-type{
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+.adhar-number{
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+.pan-number{
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+.account-status{
+    /* border: 1px solid orange; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: 7px;
+}
+.login-details-index{
+    /* border: 1px solid red; */
+    margin-top: 15px;
+    font-size: 20px;
+}
+.username-index{
+    /* border: 1px solid orange; */
+    justify-content: space-between;
+    margin-top: 15px;
+    display: flex;
+}
+.password{
+    /* border: 1px solid orange; */
+    justify-content: space-between;
+    margin-top: 7px;
+    display: flex;
+}
+.mobile-no{
+    /* border: 1px solid orange; */
+    justify-content: space-between;
+    margin-top: 15px;
+    display: flex;
+}
+.email{
+    /* border: 1px solid orange; */
+    justify-content: space-between;
+    margin-top: 7px;
+    display: flex;
+} 
+.contact{
+    margin-top: 15px;
+    font-size: 20px;
+}
