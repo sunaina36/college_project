@@ -1,3 +1,4 @@
+console.log('aaa');
 let emailAndPhoneInput=document.querySelector(".emailAndPhoneInput");//input tag for both email and phone number
 let changePreference = document.querySelector(".loginChoice"); // link for login text
 // let changePreferenceToEmail = document.querySelector(".loginWithEmail");// link for login with email

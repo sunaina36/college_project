@@ -76,7 +76,7 @@
     width: 100%;
     height: 100dvh;
     display: flex;
-    background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("./static/images/hero-bg.jpg") center center no-repeat;
+    background: linear-gradient(45deg, rgba(86, 58, 250, 0.9) 0%, rgba(116, 15, 214, 0.9) 100%), url("../images/hero-bg.jpg") center center no-repeat;
     
 }
 

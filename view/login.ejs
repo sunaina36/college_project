@@ -20,8 +20,12 @@
             <div class="logInPagePic"></div>
             <div class="logInbox">
                 <h1>Login to Your Account</h1>
-                <form class="logInForm">
-                    <div class="errorMessage"></div>
+                <form class="logInForm" method="post" action="/login">
+                    <% if(messages){ %>
+                        <span class="message">
+                            <%= messages %>
+                        </span>
+                    <% } %>
                     <input type="text" id="emailPhone" class="emailAndPhoneInput" name="email" placeholder="Email"
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email Address"
                         required>

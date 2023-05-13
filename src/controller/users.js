@@ -10,7 +10,8 @@ let saveUserDetail = async function(){
         phoneNumber:user.phoneNumber,
         email:user.email,
         aadharNumber:user.aadharNumber,
-        panNumber:user.panNumber
+        panNumber:user.panNumber,
+        password:user.password
         });
         console.log(userDetails);
         await userDetails.save();

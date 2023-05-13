@@ -16,16 +16,24 @@
     <section id="SignupPage">
         <div class="signupBox">
             <h1>Sign In</h1>
+            <% if(message){ %>
+                <span class="message">
+                    <%= message %>
+                </span>
+            <% } %>
+
 
             <form class="firstForm" method="POST" action="/signup">
                 <div class="Fform">
-                    <input type="text" name="firstName" placeholder="First Name *" class="firstName">
+                    <input type="text" name="firstName" placeholder="Name *" class="firstName" pattern="^[a-zA-Z\s]+$" title="Please enter a valid name" required>
                     <input type="text" name="dateOfBirth" placeholder="Birth Date *" onfocus="(this.type='date')"
-                        onblur="(this.type='text')" class="dateOfBirth">
-                    <input type="text" name="phoneNumber" placeholder="Phone Number *" class="phoneNumber">
-                    <input type="text" name="email" placeholder="Email *" class="email" onblur="getEmail(this);"><br>
-                    <input text="text" name="aadharNumber" placeholder="Aadhar Number *" class="aadharNumber">
-                    <input text="text" name="panNumber" placeholder="Pan Number *" class="Pan Number"><br>
+                        onblur="(this.type='text')" class="dateOfBirth" title="Please select a valid Date" required>
+                    <input type="text" name="phoneNumber" placeholder="Phone Number *" class="phoneNumber" pattern="^\+?\d[\d -]{8,12}\d" title="Please enter valid phone number" required>
+                    <input type="text" name="email" placeholder="Email *" class="email" onblur="getEmail(this);" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email Address" required><br>
+                    <input type="text" name="aadharNumber" placeholder="Aadhar Number *" class="aadharNumber" pattern="^[0-9]{12}$" required>
+                    <input type="text" name="panNumber" placeholder="Pan Number *" class="Pan Number" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required><br>
+                    <input type="text" name="password" placeholder="Password *" class="password" required>
+                    <input type="text" name="confirmPassword" placeholder="Confirm Password *" class="confirmPassword" required>
                     
                 </div>
                 <!-- {{!-- <div class="Sform">
@@ -50,8 +58,11 @@
                 </div> --}}
                  <button onclick="formSubimt" type="submit" class="formButton">Next</button>
             </form> -->
-            <p class="backTOLogin">Already have an account?<a href="./login">LogIn</a></p>
-            <button onclick="formSubimt" type="submit" class="formButton">Next</button>
+            <div class="formFotter">
+                <p class="backTOLogin">Already have an account?<a href="./login">LogIn</a></p>
+                <button onclick="formSubimt" type="submit" class="formButton">Next</button>
+            </div>
+            
 
 
 
@@ -63,7 +74,7 @@
         </div>
     </section>
 
-    <script src="./static/js/signup.js" type="commonjs"></script>
+    <script src="./static/js/signup.js"></script>
 </body>
 
 </html>

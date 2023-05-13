@@ -15,10 +15,13 @@
 .signupBox{
     border: 1px solid rgb(142, 142, 142);
     width: 50%;
-    height: 65dvh;
+    /* min-height: 65dvh; */
     background-color: white;
     border-radius: 20px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .signupBox h1{
     /* border: 1px solid red; */
@@ -27,6 +30,16 @@
     padding-top: 30px;
     padding-bottom: 20px;
 }
+.message{
+    /* border:1px solid red; */
+    /* display: flex;
+    justify-content: center; */
+    font-size: 1.2rem;
+    color:#ff6f6a;
+    margin-top: 20px;
+    
+}
+
 
 .firstForm{
     /* border:1px solid red; */
@@ -35,7 +48,7 @@
 .Fform{
     /* border: 1px solid red; */
     padding-left: 50px;
-    margin-top: 50px;
+    margin-top: 30px;
     /* display: none; */
 
 }
@@ -75,18 +88,6 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
-.OTP{
-    width: 100px;
-}
-.OtpBox{
-    border: 1px solid red;
-    display: flex;
-    flex-direction: column;
-}
-.OtpSubmit{
-    background-color: #006698;
-    color: white;
-}
 
 .firstForm input{
     width: 300px;
@@ -97,21 +98,28 @@
     padding: 5px;
     margin-bottom: 30px;
 }
+.formFotter{
+    display: flex;
+    justify-content: space-between;
+}
 .backTOLogin{
     /* border: 1px solid black; */
     font-size: 1.1rem;
-    position:absolute;
+    margin-left: 50px;
+    margin-bottom: 40px;
+    /* position:absolute;
     left: 50px;
-    bottom: 60px;
+    bottom: 60px; */
 }
 
 .formButton{
     width: 120px;
     height: 40px;
     font-size: 1rem;
-    position: absolute;
+    margin-right: 50px;
+    /* position: absolute;
     right: 50px;
-    bottom: 40px;
+    bottom: 40px; */
     background-color: #006698;
     color: white;
     border: none;
