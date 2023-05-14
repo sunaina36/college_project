@@ -25,13 +25,20 @@
 
             <form class="firstForm" method="POST" action="/signup">
                 <div class="Fform">
-                    <input type="text" name="firstName" placeholder="Name *" class="firstName" pattern="^[a-zA-Z\s]+$" title="Please enter a valid name" required>
+                    <input type="text" name="firstName" placeholder="First Name *" class="firstName" pattern="^[a-zA-Z\s]+$" title="Please enter a valid First Name" required>
+                    <input type="text" name="secondName" placeholder="Second Name *" class="secondName" pattern="[a-zA-Z\s]+$" title="Please enter a valid Second Name" required>
                     <input type="text" name="dateOfBirth" placeholder="Birth Date *" onfocus="(this.type='date')"
                         onblur="(this.type='text')" class="dateOfBirth" title="Please select a valid Date" required>
+                    <select name="gender" class="gender" required>
+                        <option value="" selected disabled hidden>Select  Gender *</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
                     <input type="text" name="phoneNumber" placeholder="Phone Number *" class="phoneNumber" pattern="^\+?\d[\d -]{8,12}\d" title="Please enter valid phone number" required>
                     <input type="text" name="email" placeholder="Email *" class="email" onblur="getEmail(this);" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter valid email Address" required><br>
                     <input type="text" name="aadharNumber" placeholder="Aadhar Number *" class="aadharNumber" pattern="^[0-9]{12}$" required>
-                    <input type="text" name="panNumber" placeholder="Pan Number *" class="Pan Number" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required><br>
+                    <input type="text" name="panNumber" placeholder="Pan Number *" class="Pan Number" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" required>
                     <input type="text" name="password" placeholder="Password *" class="password" required>
                     <input type="text" name="confirmPassword" placeholder="Confirm Password *" class="confirmPassword" required>
                     

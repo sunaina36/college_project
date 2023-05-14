@@ -25,9 +25,10 @@ route
 .get('/otp',(req,res)=>{
     res.render('otp');
 })
+// .get('/dashboard',(req,res)=>{
+//     res.render('dashboard.ejs');
+// })
 .get('/dashboard',loginAuth.isAuth,(req,res)=>{
-    // console.log(req.user);
-    // console.log(req.session);
     res.render('dashboard.ejs',{users:req.user});
 })
 .get('/test',loginAuth.isAuth,(req,res)=>{

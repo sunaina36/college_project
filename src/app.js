@@ -1,9 +1,9 @@
 const express= require('express');
 const server = express();
-const hbs = require('hbs');
-const ejs = require('ejs');
+// const hbs = require('hbs');
+// const ejs = require('ejs');
 require('./dbcon/databaseConnection');
-const userData = require("../src/modals/userdata");
+// const userData = require("../src/modals/userdata");
 const routes = require('./routes/main');
 const passport=require('passport')
 const flash = require('connect-flash');;

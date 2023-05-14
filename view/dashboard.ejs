@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dashboard.css">
-    <link rel="stylesheet" href="./profile.css">
-    <link rel="stylesheet" href="./cards.css">
-    <link rel="stylesheet" href="./debitCard.css">
-    <link rel="stylesheet" href="./transaction.css">
+    <link rel="stylesheet" href="./static/css/dashboard.css">
+    <!-- ./dashboard.css -->
+    <link rel="stylesheet" href="./static/css/profile.css">
+    <link rel="stylesheet" href="./static/css/cards.css">
+    <link rel="stylesheet" href="./static/css/debitCard.css">
+    <link rel="stylesheet" href="./static/css/transaction.css">
+    <link rel="stylesheet" href="/static/css/transfer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -22,8 +24,8 @@
             <h1>Pay4U</h1>
         </div>
         <div class="right-nav">
-            <div class="username">Jatin</div>
-            <div class="profile-photo"><img src="./user.png" alt=""></div>
+            <div class="username"><%= users.firstName.toUpperCase() %></div>
+            <div class="profile-photo"><img src="./static/images/user.png" alt=""></div>
 
         </div>
     </div>
@@ -31,12 +33,12 @@
         <div class="side-nav">
             <div>
                 <ul class="nav-list">
-                    <li class="nav-items">Dashboard</li>
-                    <li class="nav-items">Transfer</li>
-                    <li class="nav-items">Cards</li>
-                    <li class="nav-items">Transaction History</li>
-                    <li class="nav-items">Profile</li>
-                    <li class="nav-items">Logout</li>
+                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="home-outline"></ion-icon>Dashboard</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="send-outline"></ion-icon>Transfer</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="card-outline"></ion-icon>Cards</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="compass-outline"></ion-icon>Transaction History</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="person-outline"></ion-icon>Profile</div></li>
+                    <li class="nav-items" ><form method="post" action="/logout"><ion-icon name="log-out-outline"></ion-icon><input type="submit" name="Logout" value="Logout"></form></li>
                 </ul>
             </div>
         </div>
@@ -107,13 +109,14 @@
             <div class="main-content">
                 <div class="profile-index">
                     <div class="profile-mountain-photo">
+                        <div class="profile-photo-background"></div>
                         <div class="profile-profile-photo"></div>
                     </div>
                     <div class="profile-heading">
-                        <p>Jatin</p>
+                        <p><%= users.firstName+" "+users.secondName%></p>
                     </div>
                     <div class="gender">
-                        <p>Male</p>
+                        <p><%= users.gender%></p>
                     </div>
                     <div class="profile-subheading">
                         <p>The purpose of our lives is to be happy</p>
@@ -123,7 +126,6 @@
                     <div class="balance-index">
                         <div class="balance">
                             <p>Balance</p>
-                            <p class="currency">&#8377</p>
                         </div>
                         <div class="balance-rupees">1700 &#8377</div>
                         <div class="total-balance">Your Total Balance</div>
@@ -135,18 +137,18 @@
                         </div>
                         <div class="account-no">
                             <p>Account No</p>
-                            <p>410211106420</p>
+                            <p><%= users.accountNumber %></p>
                         </div>
                         <div class="account-type">
                             <p>Account Type</p>
                             <p>Saving</p>
                         </div>
                         <div class="adhar-number">
-                            <p>Adhar Number</p><p>1234567</p>
+                            <p>Adhar Number</p><p><%= users.aadharNumber %></p>
                         </div>
                         <div class="pan-number">
                             <p>Pan Number</p>
-                            <p>WERTY1234Q</p>
+                            <p><%= users.panNumber %></p>
                         </div>
                         <div class="account-status">
                             <p>Account status</p>
@@ -161,7 +163,7 @@
                         </div>
                         <div class="username-index">
                             <p>username</p>
-                            <div class="username-name"><p>Jatin</p></div>
+                            <div class="username-name"><p><%= users.firstName+" "+users.secondName%></p></div>
                         </div>
                         <div class="password">
                             <p>Password</p><p>*********</p>
@@ -169,8 +171,8 @@
                     </div>
                     <div class="contact-details">
                         <div class="contact"><p>Contact Details</p></div>
-                        <div class="mobile-no"><p>Mobile No</p><p>9044327865</p></div>
-                        <div class="email"><p>Email</p><p>Jatin.singla8607@gmail.com</p></div>
+                        <div class="mobile-no"><p>Mobile No</p><p><%= users.phoneNumber%></p></div>
+                        <div class="email"><p>Email</p><p><%= users.email%></p></div>
                     </div>
                 </div>
             </div>
@@ -193,13 +195,13 @@
                           <div class="card-details">
                             <div class="name-number">
                               <h6>Card Number</h6>
-                              <h5 class="number">8050 2030 3020 5040</h5>
-                              <h5 class="name">Jatin</h5>
+                              <h5 class="number"><% let number=users.debitCardNumber.toString().match(/.{1,4}/g) ?? [];%> <%= number[0]+" "+number[1]+" "+number[2]+" "+number[3] %></h5>
+                              <h5 class="name"><%= users.firstName+" "+users.secondName%></h5>
                             </div>
                 
                             <div class="valid-date">
                               <h6>Valid Thru</h6>
-                              <h5>05/28</h5>
+                              <h5><%= users.expiryDate.getDate()+ "/" +('0'+users.expiryDate.getMonth()).substr(-2) %></h5>
                             </div>
                           </div>
                         </div>
@@ -210,7 +212,7 @@
                             emailus@gmail.com
                           </h6>
                           <span class="magnetic-strip"></span>
-                          <div class="signature"><i>005</i></div>
+                          <div class="signature"><i><%= ('000'+users.CVV).substr(-3) %></i></div>
                           <h5>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
                             maiores sed doloremque nesciunt neque beatae voluptatibus doloribus.
@@ -225,27 +227,27 @@
                     <ul class="debit-details-list">
                         <li class="debit-detail-item">
                             <p>Account Number</p>
-                            <p>123456</p>
+                            <p><%= users.accountNumber %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Debit Card Number</p>
-                            <p>8050203030205040</p>
+                            <p><%= users.debitCardNumber %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Name</p>
-                            <p>Jatin</p>
+                            <p><%= users.firstName+" "+users.secondName%></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>CVV Number</p>
-                            <p>005</p>
+                            <p><%= ('000'+users.CVV).substr(-3) %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Issued Date</p>
-                            <p>10/1/2023</p>
+                            <p><%= users.issueDate.getDate()+ "/" +('0'+users.issueDate.getMonth()).substr(-2)+"/"+users.issueDate.getFullYear() %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Expiry Date</p>
-                            <p>05/2028</p>
+                            <p><%= users.expiryDate.getDate()+ "/" +('0'+users.expiryDate.getMonth()).substr(-2)+"/"+users.expiryDate.getFullYear() %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Card Status</p>
@@ -299,8 +301,14 @@
                 </table>
             </div>
         </section>
+        <section id="transfer">
+            
+        </section>
     </div>
-<script src="./dash.js"></script>
+<script src="./static/js/dash.js"></script>
+<!-- icons link -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

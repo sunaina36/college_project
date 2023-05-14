@@ -6,8 +6,16 @@ const userData = new Schema({
         type:String,
         required:true
     },
+    secondName:{
+        type:String,
+        required:true
+    },
     DOB:{
         type:Date,
+        required:true
+    },
+    gender:{
+        type:String,
         required:true
     },
     phoneNumber:{
@@ -33,10 +41,40 @@ const userData = new Schema({
     password:{
         type:String,
         required:true
+    },
+    accountNumber:{
+        type:Number,
+        required:true,
+        unique:true
+    },
+    debitCardNumber:{
+        type:Number,
+        required:true,
+        unique:true
+    },
+    CVV:{
+        type:Number,
+        required:true,
+    },
+    issueDate:{
+        type:Date,
+        required:true
+    },
+    expiryDate:{
+        type:Date,
+        required:true
     }
     
 });
 
 const User = mongoose.model('User',userData);
 
-module.exports=User;
+
+const basicAccout=new Schema({
+    id:String,
+    accountNumber:Number,
+    debitCardNumber:Number,
+    seq:Number
+});
+const Account = mongoose.model('Account',basicAccout);
+module.exports={User,Account};

@@ -2,18 +2,18 @@ const LocalStrategy= require('passport-local').Strategy
 const userData = require('../modals/userdata');
 function initialize(passport){
     const authenticateUsers = async (email,password,done)=>{
-       await userData.findOne({email:email}).then((user)=>{
+       await userData.User.findOne({email:email}).then((user)=>{
 
         
         if(user==null){
-            return done(null,false,{message:'no user found with that email'});
+            return done(null,false,{message:'No User Found With That Email'});
         }
         try{
             if(user.password===password){
                 return done(null, user);
             }
             else{
-                return done(null, false,{message:'password incorrect'})
+                return done(null, false,{message:'Password Incorrect'})
             }
         }catch(e){
             console.log(e);
@@ -24,7 +24,7 @@ function initialize(passport){
     passport.use(new LocalStrategy({usernameField:'email'},authenticateUsers))
     passport.serializeUser((user,done)=>done(null,user.id))
     passport.deserializeUser(async (id,done)=>{
-       await userData.findOne({_id:id}).then((user)=>{
+       await userData.User.findOne({_id:id}).then((user)=>{
 
         
         return done(null,user)

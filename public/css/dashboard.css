@@ -13,8 +13,9 @@
     flex-direction: column;
     width: 20%;
     height: 90dvh;
-    background: rgb(32,27,106);
-    background: linear-gradient(90deg, rgba(32,27,106,1) 2%, rgba(141,14,209,1) 99%);
+    /* background: rgb(32,27,106); */
+    /* background: linear-gradient(90deg, rgba(32,27,106,1) 2%, rgba(141,14,209,1) 99%); */
+    background-color: #287bff;
     color: white;
     cursor: pointer;
     /* background: url("./pexels-stephan-seeber-1261728.jpg"); */
@@ -23,7 +24,7 @@
     background-repeat: no-repeat; */
 }
 .bank-name{
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     height: 8dvh;
     padding-left: 15px;
     padding-top: 8px;
@@ -34,16 +35,87 @@
     height: 85dvh;
     display:flex;
     flex-direction: column;
-    overflow-y: auto;
 }
 .nav-items{
  /* border: 1px solid red; */
- padding: 24px;
- font-size: 1.5rem;
+ /* padding: 24px; */
+ height: 70px;
+ font-size: 1.3rem;
+ display: flex;
+ justify-content: right;
+}
+.nav-items div{
+    /* border:2px solid black; */
+    height: 100%;
+    width: 95%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius:50px ;
+    position: relative;
+    padding-left: 20px;
+}
+.nav-items form{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 95%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    position: relative;
+    padding-left: 20px;
+}
+
+.clickedNavItem{
+    background-color: white;
+    color:#287bff;
+}
+.clickedNavItem::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top:-50px;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px white;
+}
+.clickedNavItem::after{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom:-50px;
+    width: 50px;
+    height: 50px;
+    /* background-color: red; */
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px white;
+}
+.nav-items div ion-icon{
+    /* border: 1px solid red; */
+    margin-right: 10px;
+    font-size: 1.7rem;
+}
+.nav-items form ion-icon{
+    /* border: 1px solid red; */
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+.nav-items form input{
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: transparent;
+    color: white;
+    font-size:1.3rem ;
+    border: none;
+    cursor: pointer;
 }
 .top-nav{
     display: flex;
-    border-bottom:1px solid black;
+    /* border-bottom:1px solid black; */
     width: 100%;
     height: 10dvh;
     /* flex-direction: row-reverse; */
@@ -54,7 +126,8 @@
     /* border: 1px solid black; */
     font-size: 1.5rem;
     padding: 12px;
-    /* color: white; */
+    color: #287bff;
+    font-weight: 500;
 }
 
 .profile-photo img{
@@ -71,11 +144,12 @@
     /* color: white; */
 }
 .left-nav h1{
-    border-bottom: 4px solid black;
+    /* border-bottom: 4px solid black; */
     width: 40%;
     height: 100%;
     padding: 20px;
-    background: linear-gradient(90deg, rgba(32,27,106,1) 2%, rgba(141,14,209,1) 99%);
+    background-color: #287bff;
+    /* background: linear-gradient(90deg, rgba(32,27,106,1) 2%, rgba(141,14,209,1) 99%); */
     color: white;
     /* background: url("./pexels-stephan-seeber-1261728.jpg"); */
     /* background-size: 250%; */
@@ -93,15 +167,16 @@
     padding-right: 43px;
 }
 .main-window{
+    /* border: 10px solid red; */
     display: flex;
 }
 #dashboard{
     /* border: 1px solid black; */
     width: 80%;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     background-color: white;
-    display: none;
+    /* display: none; */
 }
 .section-heading{
     /* border: 1px solid purple; */
@@ -110,6 +185,7 @@
     padding: 20px;
     font-size: 2rem;
     text-align: center;
+    color: #287bff;
 }
 .account-info-cards{
     /* border: 1px solid black; */
@@ -140,6 +216,7 @@
     /* padding-left: 25px; */
     text-align: center;
     font-weight: 550;
+    color: #222;
 
 }
 .account-card-body{
@@ -150,6 +227,7 @@
     font-size: 2rem;
     font-weight: 500;
     text-align: center;
+    color: #287bff;
 }
 .debited-amount{
     color: red;
