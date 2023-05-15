@@ -7,7 +7,7 @@ const path = require('path');
 const flash = require('connect-flash');
 const passport = require('passport');
 const loginAuth=require('../controller/loginAuth');
-const imageFileToBase64 = require('../controller/ImageFileToBase64');
+// const imageFileToBase64 = require('../controller/ImageFileToBase64');
 // const convertToBase64 = require('../controller/ImageFileToBase64');
 // const uploadImage = require('../controller/multer');
 const upload = require('../controller/multer');
@@ -107,7 +107,7 @@ route
     .jpeg({quality:10})
     .resize(500, 500, {
         kernel: sharp.kernel.nearest,
-        fit: 'contain',
+        fit: 'cover',
         position: 'right top',
         background: { r: 255, g: 255, b: 255, alpha: 0.5 }
       })
