@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="./static/css/debitCard.css">
     <link rel="stylesheet" href="./static/css/transaction.css">
     <link rel="stylesheet" href="./static/css/transactionPage.css">
+    <link rel="stylesheet" href="./static/css/changePassword.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -42,6 +43,7 @@
                     <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv i"><ion-icon name="card-outline"></ion-icon>Cards</div></li>
                     <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv k"><ion-icon name="compass-outline"></ion-icon>Transaction History</div></li>
                     <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv l"><ion-icon name="person-outline"></ion-icon>Profile</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv m"><ion-icon name="person-outline"></ion-icon>Change Password</div></li>
                     <li class="nav-items" ><form method="post" action="/logout"><ion-icon name="log-out-outline"></ion-icon><input type="submit" name="Logout" value="Logout"></form></li>
                 </ul>
             </div>
@@ -316,8 +318,9 @@
         </section>
         <section id="transfer">
                 <h1 class="section-heading">Transfer Money</h1>
+    
                 <div class="transfer-box">
-                    <form class="transactionForm" method="post" action="/moneyTransfer">
+                    <form  class="transactionForm" method="post" action="/moneyTransfer">
                     <div class="transfer-form-input">
                         <span><img src="./static/images/bank.png"></span>
                         <input type="text" class="accountNumber" name="accountNumber" placeholder="Enter Account Number">
@@ -329,6 +332,23 @@
                     <input class="transferButton" type="submit">
                 </form>
                 </div>
+            </div>
+        </section>
+        <section id="password-change">
+            <h1 class="section-heading">Change Password</h1>
+            <div class="main-content">
+            <div class="main-content-box">
+                <form class="change-password-index">
+                        <p class="heading-change">Change password</p>
+                        <div class="change-box">
+                        <input type="password" class="changePassword" name="oldPassword" placeholder="Enter Current Password">
+                        <input type="password" class="changePassword" name="newPassword" placeholder="Enter New password">
+                        <input type="password" class="changePassword" name="newPassword" placeholder="Confirm New Password">
+                    <button class="change-button">Confirm</button>
+                </div>
+                </form>
+            </div>
+        </div>
         </section>
     </div>
 <script src="./static/js/dash.js"></script>

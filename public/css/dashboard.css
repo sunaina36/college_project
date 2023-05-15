@@ -68,6 +68,7 @@
 }
 
 .clickedNavItem{
+    /* background-image: linear-gradient(to bottom, white 100%, #dfe9f3 0%); */
     background-color: white;
     color:#287bff;
 }
@@ -174,8 +175,9 @@
     /* border: 1px solid black; */
     width: 80%;
     /* display: flex; */
-    flex-direction: column;
-    background-color: white;
+    /* flex-direction: column; */
+    /* background-image: linear-gradient(to top, #dfe9f3 0%, white 100%); */
+    /* background-color: white; */
     /* display: none; */
 }
 .section-heading{
