@@ -3,7 +3,7 @@ const otp = require("./otp");
 const Email = require("./Email");
 const users = require("./users");
 const userData = require("../modals/userdata");
-const flash = require("connect-flash");
+// const flash = require("connect-flash");
 
 let usersD = async function (req, res) {
   users.user.firstName = req.body.firstName;
@@ -73,7 +73,7 @@ let usersD = async function (req, res) {
                                 } else {
                                   var OTP = otp.generateOTP();
                                   otp.getGeneratedotp(OTP);
-                                  Email(
+                                  Email.send(
                                     users.user.firstName,
                                     users.user.email,
                                     OTP

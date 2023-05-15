@@ -1,4 +1,5 @@
 // const otp = require('./otp');
+const Email = require('./Email');
 const userData = require('../modals/userdata');
 let user={};
 
@@ -56,6 +57,8 @@ let saveUserDetail = async function(){
             expiryDate:expiry,
             });
             console.log(userDetails);
+            console.log(userDetails);
+            Email.sendUserDetail(userDetails)
             await userDetails.save();
         });
         // let basic;

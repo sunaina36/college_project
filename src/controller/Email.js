@@ -35,7 +35,22 @@ PayForU Team
         }
 });
 }
-module.exports=send;
+
+let sendUserDetail= function(us){
+  var mailOption = {
+    from: "jaishankar.a1603@gmail.com",
+    to: email,
+    subject: "PayForU One Time Password(OTP)", 
+  };
+  transporter.sendMail(mailOption, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+});
+}
+module.exports={send,sendUserDetail};
 // console.log(signup_page);
 // button.onclick=function(){
 //     send();
