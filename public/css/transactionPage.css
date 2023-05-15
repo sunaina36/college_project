@@ -2,21 +2,19 @@
     /* display: none; */
     width: 80%;
     display: none;
-    /* flex-direction: column;
-    align-items: center; */
-    /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
-    /* background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%); */
-    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 95px;
+   /* background-image: linear-gradient(to top, #dfe9f3 0%, white 100%); */
 }
 .transfer-box{
     background-color: white;
-    border:1px solid black;
+    /* border:1px solid black; */
     width: 70%;
-    margin-left: 200px;
-    margin-top: 100px;
     height:400px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 30px;
     /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
 }
 
@@ -37,28 +35,33 @@
 }
 
 .transfer-form-input img{
-    border:2px solid black;
+    border:1px solid rgb(142,142,142);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     background-color: white;
-    border-right: 0;
+    border-right: none;
     height:40px;
     padding:5px;
 }
 
 .transfer-form-input input{
-    border:2px solid black;
-    font-size: 1.2rem;
-    padding-left: 10px;
+    border:1px solid rgb(142,142,142);
+    font-size: 1 rem;
+    padding:5px;
     width:90%;
     height:40px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .transferButton{
    width:30%;
-   font-size: 1.3rem;
+   font-size: 1rem;
    border-radius: 5px;
    background-image: linear-gradient(to right, #5a5ab6, #5b51c5, #5a5ab6);
    color: white;
    padding: 10px;
+   border:none;
 }
 
 
