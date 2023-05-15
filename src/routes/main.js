@@ -1,7 +1,9 @@
 const express=require('express');
 const fs = require('fs');
 const UserData = require('../modals/userdata');
+const userS = require('../controller/users');
 const otpAuth = require('../controller/otpAuth');
+const transactionToUser = require('../controller/transactionToUser');
 const otp = require('../controller/otp');
 const path = require('path');
 // const flash = require('connect-flash');
@@ -13,6 +15,7 @@ const loginAuth=require('../controller/loginAuth');
 const upload = require('../controller/multer');
 const sharp = require('sharp');
 const { error } = require('console');
+const { runInNewContext } = require('vm');
 const route=express.Router();
 // passportInitialization(passport);
 let loginUser={};
@@ -30,7 +33,7 @@ route
     res.render('login',{messages:req.flash('error')});
 })
 .get('/otp',(req,res)=>{
-    res.render('otp');
+    res.render('otp',{wrongOTP:req.flash('wrongOtp')});
 })
 // .get('/dashboard',(req,res)=>{
 //     res.render('dashboard.ejs');
@@ -42,8 +45,35 @@ route
     req.session.test?req.session.test++:req.session.test=1;
     res.send(req.session.test.toString()+" "+req.user.firstName);
 })
+.get('/transactionOtp',(req,res)=>{
+    res.render('transactionOtp');
+})
 .post('/signup',otpAuth)
-.post('/otp',otp.userTypedOTP)
+.post('/otp', async(req,res)=>{
+    let userOTP = req.body.otp;
+    console.log(otp.userTypedOTP(userOTP))
+    if(otp.userTypedOTP(userOTP)){
+        await userS.saveUserDetail();
+         res.redirect('/login');
+    }
+    else{
+        req.flash("wrongOtp", "Wrong OTP");
+        res.redirect('/otp')
+    }
+    
+         
+})
+.post('/transactionOtp',async (req,res)=>{
+    let userOTP = req.body.otp;
+    if(otp.userTypedOTP(userOTP)){
+       await transactionToUser.transfferMoney();
+       res.redirect('/dashboard');
+    }
+    else{
+        req.flash('wrongTransactionOtp',"Wrong OTP");
+        res.redirect('/transactionOtp');
+    }
+})
 .post('/login',passport.authenticate('local',{
     successRedirect:'/dashboard',
     failureRedirect:'/login',
@@ -119,6 +149,24 @@ route
     // const link = `http://localhost:5550/static/images/userImages/${ref}`;
     // console.log(link);
     res.redirect('/dashboard');
+})
+.post('/moneyTransfer',(req,res)=>{
+    // console.log(req.user);
+    if(req.user.balance-req.body.transferAmount>=0){
+        transactionToUser.searchUser(req.body.accountNumber,req.user,req.body.transferAmount);
+        // console.log(userExist);
+        // if(userExist){
+            
+          res.redirect('/transactionOtp');
+        // }
+        // else{
+        //     console.log('Account number does not exist');
+        // }
+        
+    }
+    else{
+        console.log('insufficient balance');
+    }
 })
 
 module.exports={route};

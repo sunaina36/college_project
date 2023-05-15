@@ -67,8 +67,11 @@ const userData = new Schema({
     userImage:{
         data:Buffer,
         ContentType:String
-    }
-    
+    },
+    balance:{
+        type:Number
+    },
+    transaction:[{}]
 });
 
 const User = mongoose.model('User',userData);
@@ -78,6 +81,7 @@ const basicAccout=new Schema({
     id:String,
     accountNumber:Number,
     debitCardNumber:Number,
+    balance:Number,
     seq:Number
 });
 const Account = mongoose.model('Account',basicAccout);

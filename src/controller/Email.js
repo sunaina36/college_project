@@ -39,8 +39,9 @@ PayForU Team
 let sendUserDetail= function(us){
   var mailOption = {
     from: "jaishankar.a1603@gmail.com",
-    to: email,
-    subject: "PayForU One Time Password(OTP)", 
+    to: us.email,
+    subject: "Thank You For choosing Pay4U",
+    text:`welcome ${us.firstName}` 
   };
   transporter.sendMail(mailOption, function(error, info){
     if (error) {
@@ -50,7 +51,23 @@ let sendUserDetail= function(us){
     }
 });
 }
-module.exports={send,sendUserDetail};
+
+let sendtransferDetail = function(us){
+  var mailOption = {
+    from: "jaishankar.a1603@gmail.com",
+    to: us.email,
+    subject: "Thank You For choosing Pay4U",
+    text:`welcome ${us.firstName}` 
+  };
+  transporter.sendMail(mailOption, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
+});
+}
+module.exports={send,sendUserDetail,sendtransferDetail};
 // console.log(signup_page);
 // button.onclick=function(){
 //     send();

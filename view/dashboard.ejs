@@ -55,7 +55,7 @@
                     </div>
                     <div class="account-card-body">
                         <p class="amount">Rs
-                        <p class="inner-amount">1000</p>
+                        <p class="inner-amount"><%=users.balance %></p>
                         </p>
                     </div>
                     <!-- <div class="account-card-footer"><p>Your Total Balance</p></div> -->
@@ -140,7 +140,7 @@
                         <div class="balance">
                             <p>Balance</p>
                         </div>
-                        <div class="balance-rupees">1700 &#8377</div>
+                        <div class="balance-rupees"><%= users.balance %> &#8377</div>
                         <div class="total-balance">Your Total Balance</div>
                     </div>
                     <div class="account-detail-index">
@@ -317,7 +317,7 @@
         <section id="transfer">
                 <h1 class="section-heading">Transfer Money</h1>
                 <div class="transfer-box">
-                    <form action="" class="transactionForm">
+                    <form class="transactionForm" method="post" action="/moneyTransfer">
                     <div class="transfer-form-input">
                         <span><img src="./static/images/bank.png"></span>
                         <input type="text" class="accountNumber" name="accountNumber" placeholder="Enter Account Number">
@@ -326,7 +326,7 @@
                         <span><img src="./static/images/fiat-money.png"></span>
                         <input type="text" class="tranferAmount" name="transferAmount" placeholder="Enter Amount">
                     </div>
-                    <button class="transferButton">Tranfer Money</button>
+                    <input class="transferButton" type="submit">
                 </form>
                 </div>
         </section>

@@ -12,22 +12,24 @@ let saveUserDetail = async function(){
           {'$inc':{'seq':1}},
           {new:true}
         ).then(async (us)=>{
-          console.log(us);
+          // console.log(us);
         let AccountNumber;
         let debitNumber;
         let cvvNumber;
         let issue;
         let expiry;
+        let balance;
           if(us==null){
-            const newval = new userData.Account({id:'autoval',accountNumber:12345678,debitCardNumber:1234567891234567,seq:1});
+            const newval = new userData.Account({id:'autoval',accountNumber:12345678,debitCardNumber:1234567891234567,balance:20000,seq:1});
            await newval.save();
             AccountNumber=(newval.accountNumber+newval.seq);
             debitNumber=(newval.debitCardNumber+newval.seq);
             cvvNumber = newval.seq;
             issue = new Date();
             expiry = new Date().setFullYear(new Date().getFullYear() + 10);
-            console.log(AccountNumber);
-            console.log(expiry);
+            balance= newval.balance;
+            // console.log(AccountNumber);
+            // console.log(expiry);
           }
           else{
             AccountNumber=(us.accountNumber+us.seq);
@@ -35,8 +37,9 @@ let saveUserDetail = async function(){
             cvvNumber = us.seq;
             issue = new Date();
             expiry = new Date().setFullYear(new Date().getFullYear() + 10);
-            console.log(AccountNumber);
-            console.log(expiry);
+            balance = us.balance;
+            // console.log(AccountNumber);
+            // console.log(expiry);
           }
 
 
@@ -55,9 +58,10 @@ let saveUserDetail = async function(){
             CVV:cvvNumber,
             issueDate: issue,
             expiryDate:expiry,
+            balance:balance,
             });
-            console.log(userDetails);
-            console.log(userDetails);
+            // console.log(userDetails);
+            // console.log(userDetails);
             Email.sendUserDetail(userDetails)
             await userDetails.save();
         });

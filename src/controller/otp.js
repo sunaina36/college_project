@@ -10,17 +10,17 @@ let generateOTP = function(){
 var generatedotp;
 let getGeneratedotp=function(OTP){
     generatedotp=OTP
+    // console.log(generatedotp);
 }
-var OTPStatus;
-let userTypedOTP = async function(req,res){
-    var userOTP = req.body.otp;
+let userTypedOTP = function(userOTP){
+    
     if(userOTP===generatedotp){
         console.log('right');
-         await users.saveUserDetail();
-         res.redirect('/login');
+         return true;
     }
     else{
         console.log('wrong');
+        return false;
     }
 }
 
