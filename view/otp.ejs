@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/otp.css">
     <title>Otp</title>
 </head>
+
 <body>
-    <form method="post" action="/otp">
-        <h1>OTP Verification</h1>
-                    <p>we will be sending OTP to your Mail</p>
-                    <div class="OtpBox">
-                        
-                            <p>Please Enter your Mail</p>
-                            <!-- {{!-- <input type="text" class="OtpEmail" placeholder="Email" name="OtpEmail"> --}} -->
-                            <input type="text" class="OTP" name="otp">
-                            <!-- {{!-- <button class="OtpSubmit" onclick="sendOtp(this);">Continue</button> --}} -->
-                            <input type="submit" >
-                    </div>
-    </form>
+    <section id="otp-page">
+        <div class="main-box">
+            <form method="post" action="/otp">
+                <h1>OTP Verification</h1>
+                <p class="info">We will be sending OTP to your Mail</p>
+                <div class="OtpBox">
+                    <div>
+                    <p>Please Enter the Otp: </p>
+                    <!-- {{!-- <input type="text" class="OtpEmail" placeholder="Email" name="OtpEmail"> --}} -->
+                    <input type="text" class="OTP" name="otp" placeholder="Your Otp">
+                    <!-- {{!-- <button class="OtpSubmit" onclick="sendOtp(this);">Continue</button> --}} -->
+                </div>
+                    <input type="submit" class="otp-button">
+                </div>
+            </form>
+        </div>
+    </section>
 </body>
+
 </html>

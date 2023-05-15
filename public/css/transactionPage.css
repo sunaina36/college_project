@@ -1,0 +1,62 @@
+#transfer{
+    /* display: none; */
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+    /* background-image: linear-gradient(to top, #6a85b6 0%, #bac8e0 100%); */
+    background-image: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+.transfer-box{
+    background-color: white;
+    border:1px solid black;
+    width: 70%;
+    margin-top: 100px;
+    height:400px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%); */
+}
+
+.transactionForm{
+    /* border: 1px solid black; */
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:50px;
+    margin-top: 80px;
+}
+.transfer-form-input{
+    /* border:1px solid blue; */
+    width:70%;
+    display: flex;
+}
+
+.transfer-form-input img{
+    border:2px solid black;
+    background-color: white;
+    border-right: 0;
+    height:40px;
+    padding:5px;
+}
+
+.transfer-form-input input{
+    border:2px solid black;
+    font-size: 1.2rem;
+    padding-left: 10px;
+    width:90%;
+    height:40px;
+}
+
+.transferButton{
+   width:30%;
+   font-size: 1.3rem;
+   border-radius: 5px;
+   background-image: linear-gradient(to right, #5a5ab6, #5b51c5, #5a5ab6);
+   color: white;
+   padding: 10px;
+}
+
+
