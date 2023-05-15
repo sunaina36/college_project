@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#otp-page{
+    width: 100%;
+    height: 100dvh;
+    /* border: 1px solid red; */
+    background-color: #006698;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main-box{
+    /* border: 1px solid rgb(142, 142, 142); */
+    width: 50%;
+    /* min-height: 65dvh; */
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-box h1{
+    /* border: 1px solid red; */
+    text-align: center;
+    font-size: 2.5rem;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.info{
+    /* border: 1px solid purple;  */
+    font-size: 1.2rem;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.OtpBox{
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    width:100%;
+    margin-bottom: 30px;
+}
+
+.OtpBox div{
+    /* border: 1px solid green; */
+    display: flex;
+    gap: 30px;
+    width: 100%;
+}
+
+.OtpBox div>p{
+    /* border: 1px solid rgb(237, 13, 50); */
+    font-size: 1.4rem;
+    padding: 5px;
+}
+
+.OTP{
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid rgb(142, 142, 142);
+    font-size: 1rem;
+    padding: 5px;
+}
+.otp-button
+{
+    width: 120px;
+    height: 40px;
+    font-size: 1rem;
+    background-color: #006698;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 170px;
+}

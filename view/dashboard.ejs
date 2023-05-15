@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="./static/css/cards.css">
     <link rel="stylesheet" href="./static/css/debitCard.css">
     <link rel="stylesheet" href="./static/css/transaction.css">
-    <link rel="stylesheet" href="/static/css/transfer.css">
+    <link rel="stylesheet" href="./static/css/transfer.css">
+    <link rel="stylesheet" href="./static/css/transactionPage.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
@@ -315,7 +316,20 @@
             </div>
         </section>
         <section id="transfer">
-            
+                <h1 class="section-heading">Transfer Money</h1>
+                <div class="transfer-box">
+                    <form action="" class="transactionForm">
+                    <div class="transfer-form-input">
+                        <span><img src="./static/images/bank.png"></span>
+                        <input type="text" class="accountNumber" name="accountNumber" placeholder="Enter Account Number">
+                    </div>
+                    <div class="transfer-form-input">
+                        <span><img src="./static/images/fiat-money.png"></span>
+                        <input type="text" class="tranferAmount" name="transferAmount" placeholder="Enter Amount">
+                    </div>
+                    <button class="transferButton">Tranfer Money</button>
+                </form>
+                </div>
         </section>
     </div>
 <script src="./static/js/dash.js"></script>
