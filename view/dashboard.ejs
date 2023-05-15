@@ -25,7 +25,11 @@
         </div>
         <div class="right-nav">
             <div class="username"><%= users.firstName.toUpperCase() %></div>
-            <div class="profile-photo"><img src="./static/images/user.png" alt=""></div>
+            <div class="profile-photo">
+                <% if(users.userImage.ContentType) { %>
+                    <img src="data:image/<%= users.userImage.ContentType %>;base64,
+                    <%= users.userImage.data.toString('base64') %> ">
+                    <% } %></div>
 
         </div>
     </div>
@@ -33,11 +37,11 @@
         <div class="side-nav">
             <div>
                 <ul class="nav-list">
-                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="home-outline"></ion-icon>Dashboard</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="send-outline"></ion-icon>Transfer</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="card-outline"></ion-icon>Cards</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="compass-outline"></ion-icon>Transaction History</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div><ion-icon name="person-outline"></ion-icon>Profile</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv j"><ion-icon name="home-outline"></ion-icon>Dashboard</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv a"><ion-icon name="send-outline"></ion-icon>Transfer</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv i"><ion-icon name="card-outline"></ion-icon>Cards</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv k"><ion-icon name="compass-outline"></ion-icon>Transaction History</div></li>
+                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv l"><ion-icon name="person-outline"></ion-icon>Profile</div></li>
                     <li class="nav-items" ><form method="post" action="/logout"><ion-icon name="log-out-outline"></ion-icon><input type="submit" name="Logout" value="Logout"></form></li>
                 </ul>
             </div>
@@ -110,7 +114,16 @@
                 <div class="profile-index">
                     <div class="profile-mountain-photo">
                         <div class="profile-photo-background"></div>
-                        <div class="profile-profile-photo"></div>
+                        <div class="profile-profile-photo">
+                            <form method="post" action="/upload" enctype="multipart/form-data" class="profileform">
+                                <label for="profileImage" class="profileImageLabel" onclick="submitFormOnChange(this)"></label>
+                                <input type="file" id="profileImage" name="profileImage" accept=".jpeg, .png, .jpg">
+                            </form>
+                            <% if(users.userImage.ContentType) { %>
+                            <img class="profilePic" src="data:image/<%= users.userImage.ContentType %>;base64,
+                            <%= users.userImage.data.toString('base64') %> ">
+                            <% } %>
+                        </div>
                     </div>
                     <div class="profile-heading">
                         <p><%= users.firstName+" "+users.secondName%></p>
@@ -201,7 +214,7 @@
                 
                             <div class="valid-date">
                               <h6>Valid Thru</h6>
-                              <h5><%= users.expiryDate.getDate()+ "/" +('0'+users.expiryDate.getMonth()).substr(-2) %></h5>
+                              <h5><%= users.expiryDate.getDate()+ "/" +('0'+(users.expiryDate.getMonth()+1)).substr(-2) %></h5>
                             </div>
                           </div>
                         </div>
@@ -243,11 +256,11 @@
                         </li>
                         <li class="debit-detail-item">
                             <p>Issued Date</p>
-                            <p><%= users.issueDate.getDate()+ "/" +('0'+users.issueDate.getMonth()).substr(-2)+"/"+users.issueDate.getFullYear() %></p>
+                            <p><%= users.issueDate.getDate()+ "/" +('0'+(users.issueDate.getMonth()+1)).substr(-2)+"/"+users.issueDate.getFullYear() %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Expiry Date</p>
-                            <p><%= users.expiryDate.getDate()+ "/" +('0'+users.expiryDate.getMonth()).substr(-2)+"/"+users.expiryDate.getFullYear() %></p>
+                            <p><%= users.expiryDate.getDate()+ "/" +('0'+(users.expiryDate.getMonth()+1)).substr(-2)+"/"+users.expiryDate.getFullYear() %></p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Card Status</p>

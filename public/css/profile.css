@@ -40,7 +40,7 @@
     
 }
 .profile-profile-photo{
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     height: 120px;
     width: 120px;
     border-radius: 50%;
@@ -49,6 +49,35 @@
     left: 40%;
     top: 62%; */
     transform: translateY(50px);
+    position: relative;
+}
+.profile-profile-photo form{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    position:absolute;
+    z-index: 2;
+}
+.profileImageLabel{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius:50%;
+    /* border: 5px solid red; */
+    cursor: pointer;
+}
+#profileImage{
+    display: none;
+}
+.profilePic{
+    width: 100%;
+    height: 100%;
+    /* border: 2px solid red; */
+    border-radius: 50%;
+    /* transform: translateY(-120px); */
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
 }
 .profile-heading{
     /* border: 1px solid pink; */

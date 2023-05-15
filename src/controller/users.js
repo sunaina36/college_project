@@ -10,7 +10,7 @@ let saveUserDetail = async function(){
           {id:'autoval'},
           {'$inc':{'seq':1}},
           {new:true}
-        ).then((us)=>{
+        ).then(async (us)=>{
           console.log(us);
         let AccountNumber;
         let debitNumber;
@@ -19,7 +19,7 @@ let saveUserDetail = async function(){
         let expiry;
           if(us==null){
             const newval = new userData.Account({id:'autoval',accountNumber:12345678,debitCardNumber:1234567891234567,seq:1});
-            newval.save();
+           await newval.save();
             AccountNumber=(newval.accountNumber+newval.seq);
             debitNumber=(newval.debitCardNumber+newval.seq);
             cvvNumber = newval.seq;
@@ -56,7 +56,7 @@ let saveUserDetail = async function(){
             expiryDate:expiry,
             });
             console.log(userDetails);
-             userDetails.save();
+            await userDetails.save();
         });
         // let basic;
         // userData.Account.findOne({id:'autoval'}).then((us)=>{

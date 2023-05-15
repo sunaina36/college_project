@@ -63,6 +63,10 @@ const userData = new Schema({
     expiryDate:{
         type:Date,
         required:true
+    },
+    userImage:{
+        data:Buffer,
+        ContentType:String
     }
     
 });

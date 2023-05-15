@@ -1,6 +1,6 @@
 console.log('jai');
 const sideNavItem=document.querySelectorAll(".nav-items");
-const sideNavItemInsideDiv=document.querySelectorAll(".nav-items div");
+const sideNavItemInsideDiv=document.querySelectorAll(".nav-items .navItemDiv");
 // console.log(sideNavItemInsideDiv);
 const dashboard = document.querySelector('#dashboard');
 const cards= document.querySelector('#cards');
@@ -11,15 +11,29 @@ const transfer = document.querySelector('#transfer');
 const navArr=[dashboard,transfer,cards,transactionHistory,profile];
 sideNavItemInsideDiv[0].classList.add('clickedNavItem');
 function sidenav(e){
-    for(i=0;i<sideNavItem.length;i++){
+    for(i=0;i<sideNavItemInsideDiv.length;i++){
         if(e==sideNavItem[i]){
             sideNavItemInsideDiv[i].classList.add('clickedNavItem');
             // console.log(navArr[i]);
             navArr[i].style.display='block';
         }
         else{
-            sideNavItemInsideDiv[i].classList.remove('clickedNavItem');
+            // console.log(sideNavItemInsideDiv[i].classList);
+            if( sideNavItemInsideDiv[i].classList.contains('clickedNavItem')){
+                console.log(sideNavItemInsideDiv[i].classList);
+                sideNavItemInsideDiv[i].classList.remove('clickedNavItem');
+            }
             navArr[i].style.display='none';
         }
     }
+}
+
+const form = document.querySelector('.profileform');
+const profileImage = document.querySelector('#profileImage');
+function submitFormOnChange(e){
+    e.value="";
+    profileImage.addEventListener('change',()=>{
+        console.log('a');
+        form.submit();
+    })
 }
