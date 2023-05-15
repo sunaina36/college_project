@@ -1,9 +1,11 @@
 const express=require('express');
 const fs = require('fs');
+const Email = require('../controller/Email');
 const UserData = require('../modals/userdata');
 const userS = require('../controller/users');
 const otpAuth = require('../controller/otpAuth');
 const transactionToUser = require('../controller/transactionToUser');
+const forgetpass= require('../controller/forgetPass');
 const otp = require('../controller/otp');
 const path = require('path');
 // const flash = require('connect-flash');
@@ -39,14 +41,23 @@ route
 //     res.render('dashboard.ejs');
 // })
 .get('/dashboard',loginAuth.isAuth,(req,res)=>{
-    res.render('dashboard.ejs',{users:req.user});
+    res.render('dashboard.ejs',{users:req.user,error:req.flash('error')});
 })
-.get('/test',loginAuth.isAuth,(req,res)=>{
-    req.session.test?req.session.test++:req.session.test=1;
-    res.send(req.session.test.toString()+" "+req.user.firstName);
-})
+// .get('/test',loginAuth.isAuth,(req,res)=>{
+//     req.session.test?req.session.test++:req.session.test=1;
+//     res.send(req.session.test.toString()+" "+req.user.firstName);
+// })
 .get('/transactionOtp',(req,res)=>{
-    res.render('transactionOtp');
+    res.render('transactionOtp',{wrongTransactionOtp:req.flash('wrongTransactionOtp')});
+})
+.get('/forgetpas',(req,res)=>{
+    res.render('forgetPass',{wrongEmail:req.flash('wrongEmail')});
+})
+.get('/resetPass',(req,res)=>{
+    res.render('resetPass',{error:req.flash('error')});
+})
+.get('/forgetPassOtp',(req,res)=>{
+    res.render('forgetPassOtp',{wrongforgetOtp:req.flash('wrongforgetOtp')});
 })
 .post('/signup',otpAuth)
 .post('/otp', async(req,res)=>{
@@ -150,23 +161,9 @@ route
     // console.log(link);
     res.redirect('/dashboard');
 })
-.post('/moneyTransfer',(req,res)=>{
-    // console.log(req.user);
-    if(req.user.balance-req.body.transferAmount>=0){
-        transactionToUser.searchUser(req.body.accountNumber,req.user,req.body.transferAmount);
-        // console.log(userExist);
-        // if(userExist){
-            
-          res.redirect('/transactionOtp');
-        // }
-        // else{
-        //     console.log('Account number does not exist');
-        // }
-        
-    }
-    else{
-        console.log('insufficient balance');
-    }
-})
+.post('/moneyTransfer',transactionToUser.searchUser)
+.post('/forgetPassOtp',forgetpass.forgetpassotp)
+.post('/resetPass',forgetpass.resetpass)
+.post('/forgetpas',forgetpass.forget)
 
 module.exports={route};

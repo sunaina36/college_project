@@ -12,14 +12,14 @@
 <body>
     <section id="otp-page">
         <div class="main-box">
-            <form method="post" action="/transactionOtp">
+            <form method="post" action="/forgetPassOtp">
                 <h1>OTP Verification</h1>
-                <% if(wrongTransactionOtp){ %>
+                <p class="info">We will be sending OTP to your Mail</p>
+                <% if(wrongforgetOtp){ %>
                     <span class="message">
-                        <%= wrongTransactionOtp %>
+                        <%= wrongforgetOtp %>
                     </span>
                 <% } %>
-                <p class="info">We will be sending OTP to your Mail</p>
                 <div class="OtpBox">
                     <div>
                     <p>Please Enter the Otp: </p>

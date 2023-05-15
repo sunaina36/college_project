@@ -12,9 +12,15 @@
 <body>
     <section id="forget-page">
         <div class="main-box">
-            <form method="post" action="">
+            <form method="post" action="/forgetpas">
+                
                 <h1>Forget Password ?</h1>
                 <p class="info">Don't Worry, Reset your Password</p>
+                <% if(wrongEmail){ %>
+                    <span class="message">
+                        <%= wrongEmail %>
+                    </span>
+                <% } %>
                 <div class="forgetBox">
                     <div>
                     <p>Enter your E-mail: </p>

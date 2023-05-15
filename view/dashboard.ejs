@@ -25,12 +25,15 @@
             <h1>Pay4U</h1>
         </div>
         <div class="right-nav">
-            <div class="username"><%= users.firstName.toUpperCase() %></div>
+            <div class="username">
+                <%= users.firstName.toUpperCase() %>
+            </div>
             <div class="profile-photo">
                 <% if(users.userImage.ContentType) { %>
                     <img src="data:image/<%= users.userImage.ContentType %>;base64,
                     <%= users.userImage.data.toString('base64') %> ">
-                    <% } %></div>
+                    <% } %>
+            </div>
 
         </div>
     </div>
@@ -38,13 +41,28 @@
         <div class="side-nav">
             <div>
                 <ul class="nav-list">
-                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv j"><ion-icon name="home-outline"></ion-icon>Dashboard</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv a"><ion-icon name="send-outline"></ion-icon>Transfer</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv i"><ion-icon name="card-outline"></ion-icon>Cards</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv k"><ion-icon name="compass-outline"></ion-icon>Transaction History</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv l"><ion-icon name="person-outline"></ion-icon>Profile</div></li>
-                    <li class="nav-items" onclick="sidenav(this)"><div class="navItemDiv m"><ion-icon name="person-outline"></ion-icon>Change Password</div></li>
-                    <li class="nav-items" ><form method="post" action="/logout"><ion-icon name="log-out-outline"></ion-icon><input type="submit" name="Logout" value="Logout"></form></li>
+                    <li class="nav-items" onclick="sidenav(this)">
+                        <div class="navItemDiv j"><ion-icon name="home-outline"></ion-icon>Dashboard</div>
+                    </li>
+                    <li class="nav-items" onclick="sidenav(this)">
+                        <div class="navItemDiv a"><ion-icon name="send-outline"></ion-icon>Transfer</div>
+                    </li>
+                    <li class="nav-items" onclick="sidenav(this)">
+                        <div class="navItemDiv i"><ion-icon name="card-outline"></ion-icon>Cards</div>
+                    </li>
+                    <li class="nav-items" onclick="sidenav(this)">
+                        <div class="navItemDiv k"><ion-icon name="compass-outline"></ion-icon>Transaction History</div>
+                    </li>
+                    <li class="nav-items" onclick="sidenav(this)">
+                        <div class="navItemDiv l"><ion-icon name="person-outline"></ion-icon>Profile</div>
+                    </li>
+                    <li class="nav-items" onclick="sidenav(this)">
+                        <div class="navItemDiv m"><ion-icon name="person-outline"></ion-icon>Change Password</div>
+                    </li>
+                    <li class="nav-items">
+                        <form method="post" action="/logout"><ion-icon name="log-out-outline"></ion-icon><input
+                                type="submit" name="Logout" value="Logout"></form>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -57,7 +75,9 @@
                     </div>
                     <div class="account-card-body">
                         <p class="amount">Rs
-                        <p class="inner-amount"><%=users.balance %></p>
+                        <p class="inner-amount">
+                            <%=users.balance %>
+                        </p>
                         </p>
                     </div>
                     <!-- <div class="account-card-footer"><p>Your Total Balance</p></div> -->
@@ -68,10 +88,19 @@
                     </div>
                     <div class="account-card-body debited-amount">
                         <p class="amount">Rs
-                        <p class="inner-amount">200</p>
+                        <p class="inner-amount">
+                            <% let debited = 0 %>
+                            <% for(var i=0; !( i >= users.transaction.length); i++) {%>
+                            <% if(!(new Date().getMonth()-users.transaction[i].transferDate.getMonth()>=1)) { %>
+                                <% if(users.transaction[i].status==="debited") { %>
+                                <% debited+= (+users.transaction[i].amount) %>
+                                <% } %>
+                            <% } %>
+                            <% } %>
+                            <%= debited %>
+                        </p>
                         </p>
                     </div>
-                    <!-- <div class="account-card-footer"><p class="amount"><p class="inner-amount">-1000</p> rs Since Last Month</p></div> -->
                 </div>
                 <div class="account-card">
                     <div class="account-card-heading">
@@ -79,7 +108,15 @@
                     </div>
                     <div class="account-card-body credited-amount">
                         <p class="amount">Rs
-                        <p class="inner-amount">0</p>
+                        <p class="inner-amount"><% let  credited = 0 %>
+                            <% for(var i=0; !( i >= users.transaction.length); i++) {%>
+                            <% if(!(new Date().getMonth()-users.transaction[i].transferDate.getMonth()>=1)) { %>
+                                <% if(users.transaction[i].status==="credited") { %>
+                                <% credited+= (+users.transaction[i].amount) %>
+                                <% } %>
+                            <% } %>
+                            <% } %>
+                            <%= credited %></p>
                         </p>
                     </div>
                     <!-- <div class="account-card-footer"><p class="amount"><p class="inner-amount">300</p> rs Since Last Month</p></div> -->
@@ -118,20 +155,24 @@
                         <div class="profile-photo-background"></div>
                         <div class="profile-profile-photo">
                             <form method="post" action="/upload" enctype="multipart/form-data" class="profileform">
-                                <label for="profileImage" class="profileImageLabel" onclick="submitFormOnChange(this)"></label>
+                                <label for="profileImage" class="profileImageLabel"
+                                    onclick="submitFormOnChange(this)"></label>
                                 <input type="file" id="profileImage" name="profileImage" accept=".jpeg, .png, .jpg">
                             </form>
                             <% if(users.userImage.ContentType) { %>
-                            <img class="profilePic" src="data:image/<%= users.userImage.ContentType %>;base64,
+                                <img class="profilePic" src="data:image/<%= users.userImage.ContentType %>;base64,
                             <%= users.userImage.data.toString('base64') %> ">
-                            <% } %>
+                                <% } %>
                         </div>
                     </div>
                     <div class="profile-heading">
-                        <p><%= users.firstName+" "+users.secondName%></p>
+                        <p>
+                            <%= users.firstName+" "+users.secondName%></p>
                     </div>
-                    <div class="gender">
-                        <p><%= users.gender%></p>
+                    <div class=" gender">
+                                <p>
+                                    <%= users.gender%>
+                                </p>
                     </div>
                     <div class="profile-subheading">
                         <p>The purpose of our lives is to be happy</p>
@@ -142,7 +183,9 @@
                         <div class="balance">
                             <p>Balance</p>
                         </div>
-                        <div class="balance-rupees"><%= users.balance %> &#8377</div>
+                        <div class="balance-rupees">
+                            <%= users.balance %> &#8377
+                        </div>
                         <div class="total-balance">Your Total Balance</div>
                     </div>
                     <div class="account-detail-index">
@@ -152,18 +195,25 @@
                         </div>
                         <div class="account-no">
                             <p>Account No</p>
-                            <p><%= users.accountNumber %></p>
+                            <p>
+                                <%= users.accountNumber %>
+                            </p>
                         </div>
                         <div class="account-type">
                             <p>Account Type</p>
                             <p>Saving</p>
                         </div>
                         <div class="adhar-number">
-                            <p>Adhar Number</p><p><%= users.aadharNumber %></p>
+                            <p>Adhar Number</p>
+                            <p>
+                                <%= users.aadharNumber %>
+                            </p>
                         </div>
                         <div class="pan-number">
                             <p>Pan Number</p>
-                            <p><%= users.panNumber %></p>
+                            <p>
+                                <%= users.panNumber %>
+                            </p>
                         </div>
                         <div class="account-status">
                             <p>Account status</p>
@@ -178,19 +228,34 @@
                         </div>
                         <div class="username-index">
                             <p>username</p>
-                            <div class="username-name"><p><%= users.firstName+" "+users.secondName%></p></div>
+                            <div class="username-name">
+                                <p>
+                                    <%= users.firstName+" "+users.secondName%></p></div>
                         </div>
-                        <div class="password">
-                            <p>Password</p><p>*********</p>
+                        <div class=" password">
+                                        <p>Password</p>
+                                        <p>*********</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact"><p>Contact Details</p></div>
-                        <div class="mobile-no"><p>Mobile No</p><p><%= users.phoneNumber%></p></div>
-                        <div class="email"><p>Email</p><p><%= users.email%></p></div>
+                        <div class="contact-details">
+                            <div class="contact">
+                                <p>Contact Details</p>
+                            </div>
+                            <div class="mobile-no">
+                                <p>Mobile No</p>
+                                <p>
+                                    <%= users.phoneNumber%>
+                                </p>
+                            </div>
+                            <div class="email">
+                                <p>Email</p>
+                                <p>
+                                    <%= users.email%>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </section>
         <section id="cards">
             <h1 class="card-heading">Cards</h1>
@@ -199,70 +264,93 @@
                     <h2 class="debit-card-heading">Your Debit Card</h2>
                     <div class="container">
                         <div class="debit-card front-face">
-                          <header>
-                            <span class="logo">
-                              <!--<img src="images/logo.png" alt="" />-->
-                              <h5>Master Card</h5>
-                            </span>
-                           <!--<img src="images/chip.png" alt="" class="chip" />-->
-                          </header>
-                
-                          <div class="card-details">
-                            <div class="name-number">
-                              <h6>Card Number</h6>
-                              <h5 class="number"><% let number=users.debitCardNumber.toString().match(/.{1,4}/g) ?? [];%> <%= number[0]+" "+number[1]+" "+number[2]+" "+number[3] %></h5>
-                              <h5 class="name"><%= users.firstName+" "+users.secondName%></h5>
+                            <header>
+                                <span class="logo">
+                                    <!--<img src="images/logo.png" alt="" />-->
+                                    <h5>Master Card</h5>
+                                </span>
+                                <!--<img src="images/chip.png" alt="" class="chip" />-->
+                            </header>
+
+                            <div class="card-details">
+                                <div class="name-number">
+                                    <h6>Card Number</h6>
+                                    <h5 class="number">
+                                        <% let number=users.debitCardNumber.toString().match(/.{1,4}/g) ?? [];%>
+                                            <%= number[0]+" "+number[1]+" "+number[2]+" "+number[3] %></h5>
+                              <h5 class=" name">
+                                                <%= users.firstName+" "+users.secondName%></h5>
                             </div>
                 
-                            <div class="valid-date">
-                              <h6>Valid Thru</h6>
-                              <h5><%= users.expiryDate.getDate()+ "/" +('0'+(users.expiryDate.getMonth()+1)).substr(-2) %></h5>
+                            <div class=" valid-date">
+                                                    <h6>Valid Thru</h6>
+                                                    <h5>
+                                                        <%= users.expiryDate.getDate()+ "/"
+                                                            +('0'+(users.expiryDate.getMonth()+1)).substr(-2) %>
+                                                    </h5>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                
+
                         <div class="debit-card back-face">
-                          <h6>
-                            For customer service call +91 9999999999 or email at
-                            emailus@gmail.com
-                          </h6>
-                          <span class="magnetic-strip"></span>
-                          <div class="signature"><i><%= ('000'+users.CVV).substr(-3) %></i></div>
-                          <h5>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
-                            maiores sed doloremque nesciunt neque beatae voluptatibus doloribus.
-                            Libero et quis magni magnam nihil temporibus? Facere consectetur
-                            dolore reiciendis et veniam.
-                          </h5>
+                            <h6>
+                                For customer service call +91 9999999999 or email at
+                                emailus@gmail.com
+                            </h6>
+                            <span class="magnetic-strip"></span>
+                            <div class="signature"><i>
+                                    <%= ('000'+users.CVV).substr(-3) %>
+                                </i></div>
+                            <h5>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia
+                                maiores sed doloremque nesciunt neque beatae voluptatibus doloribus.
+                                Libero et quis magni magnam nihil temporibus? Facere consectetur
+                                dolore reiciendis et veniam.
+                            </h5>
                         </div>
-                      </div>
+                    </div>
                 </div>
                 <div class="debit-card-details">
                     <h2 class="debit-card-heading">Your Debit Card Details</h2>
                     <ul class="debit-details-list">
                         <li class="debit-detail-item">
                             <p>Account Number</p>
-                            <p><%= users.accountNumber %></p>
+                            <p>
+                                <%= users.accountNumber %>
+                            </p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Debit Card Number</p>
-                            <p><%= users.debitCardNumber %></p>
+                            <p>
+                                <%= users.debitCardNumber %>
+                            </p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Name</p>
-                            <p><%= users.firstName+" "+users.secondName%></p>
+                            <p>
+                                <%= users.firstName+" "+users.secondName%></p>
                         </li>
-                        <li class="debit-detail-item">
-                            <p>CVV Number</p>
-                            <p><%= ('000'+users.CVV).substr(-3) %></p>
+                        <li class=" debit-detail-item">
+                                    <p>CVV Number</p>
+                                    <p>
+                                        <%= ('000'+users.CVV).substr(-3) %>
+                                    </p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Issued Date</p>
-                            <p><%= users.issueDate.getDate()+ "/" +('0'+(users.issueDate.getMonth()+1)).substr(-2)+"/"+users.issueDate.getFullYear() %></p>
+                            <p>
+                                <%= users.issueDate.getDate()+ "/"
+                                    +('0'+(users.issueDate.getMonth()+1)).substr(-2)+"/"+users.issueDate.getFullYear()
+                                    %>
+                            </p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Expiry Date</p>
-                            <p><%= users.expiryDate.getDate()+ "/" +('0'+(users.expiryDate.getMonth()+1)).substr(-2)+"/"+users.expiryDate.getFullYear() %></p>
+                            <p>
+                                <%= users.expiryDate.getDate()+ "/"
+                                    +('0'+(users.expiryDate.getMonth()+1)).substr(-2)+"/"+users.expiryDate.getFullYear()
+                                    %>
+                            </p>
                         </li>
                         <li class="debit-detail-item">
                             <p>Card Status</p>
@@ -289,41 +377,49 @@
                         <th class="table-heading">Amount</th>
                         <th class="table-heading">Status</th>
                     </tr>
-                    <tr>
-                        <td class="user-data">1</td>
-                        <td class="user-data">Kunal Bahri</td>
-                        <td class="user-data">525211930120</td>
-                        <td class="user-data">2023-01-22</td>
-                        <td class="user-data">-100</td>
-                        <td class="user-data">Debited</td>
-                    </tr>
-                    <tr>
-                        <td class="user-data">2</td>
-                        <td class="user-data">Kunal Bahri</td>
-                        <td class="user-data">525211930120</td>
-                        <td class="user-data">2023-01-22</td>
-                        <td class="user-data">-100</td>
-                        <td class="user-data">Debited</td>
-                    </tr>
-                    <tr>
-                        <td class="user-data">3</td>
-                        <td class="user-data">Kunal Bahri</td>
-                        <td class="user-data">525211930120</td>
-                        <td class="user-data">2023-01-22</td>
-                        <td class="user-data">-100</td>
-                        <td class="user-data">Debited</td>
-                    </tr>
+                    <% for(var i=0; !( i >= users.transaction.length); i++) {%>
+                        <% if(users.transaction[i].status==="debited"){ %>
+                        <tr>
+                            <td class="user-data" style="color:red"><%= i+1 %></td>
+                            <td class="user-data" style="color:red"><%= users.transaction[i].name %></td>
+                            <td class="user-data" style="color:red"><%= users.transaction[i].account %></td>
+                            <td class="user-data" style="color:red"> <%= users.transaction[i].transferDate.getDate()+ "/"
+                                +('0'+(users.transaction[i].transferDate.getMonth()+1)).substr(-2)+"/"+users.transaction[i].transferDate.getFullYear()
+                                %></td>
+                            <td class="user-data" style="color:red"><%= -1*(users.transaction[i].amount) %></td>
+                            <td class="user-data" style="color:red"><%= users.transaction[i].status %></td>
+                        </tr>
+                        <% } else {%>
+                            <tr>
+                                <td class="user-data" style="color:green"><%= i+1 %></td>
+                                <td class="user-data" style="color:green"><%= users.transaction[i].name %></td>
+                                <td class="user-data" style="color:green"><%= users.transaction[i].account %></td>
+                                <td class="user-data" style="color:green"> <%= users.transaction[i].transferDate.getDate()+ "/"
+                                    +('0'+(users.transaction[i].transferDate.getMonth()+1)).substr(-2)+"/"+users.transaction[i].transferDate.getFullYear()
+                                    %></td>
+                                <td class="user-data" style="color:green"><%= (users.transaction[i].amount) %></td>
+                                <td class="user-data" style="color:green"><%= users.transaction[i].status %></td>
+                            </tr>
+                        <% } %>
+                    <% } %>
                 </table>
             </div>
         </section>
         <section id="transfer">
-                <h1 class="section-heading">Transfer Money</h1>
-    
-                <div class="transfer-box">
-                    <form  class="transactionForm" method="post" action="/moneyTransfer">
+            <h1 class="section-heading">Transfer Money</h1>
+
+            <div class="transfer-box">
+                
+                <form class="transactionForm" method="post" action="/moneyTransfer">
                     <div class="transfer-form-input">
+                        <% if(error){ %>
+                            <span class="message">
+                                <%= error %>
+                            </span>
+                        <% } %>
                         <span><img src="./static/images/bank.png"></span>
-                        <input type="text" class="accountNumber" name="accountNumber" placeholder="Enter Account Number">
+                        <input type="text" class="accountNumber" name="accountNumber"
+                            placeholder="Enter Account Number">
                     </div>
                     <div class="transfer-form-input">
                         <span><img src="./static/images/fiat-money.png"></span>
@@ -331,30 +427,33 @@
                     </div>
                     <input class="transferButton" type="submit">
                 </form>
-                </div>
             </div>
-        </section>
-        <section id="password-change">
-            <h1 class="section-heading">Change Password</h1>
-            <div class="main-content">
+
+    </section>
+    <section id="password-change">
+        <h1 class="section-heading">Change Password</h1>
+        <div class="main-content">
             <div class="main-content-box">
                 <form class="change-password-index">
-                        <p class="heading-change">Change password</p>
-                        <div class="change-box">
-                        <input type="password" class="changePassword" name="oldPassword" placeholder="Enter Current Password">
-                        <input type="password" class="changePassword" name="newPassword" placeholder="Enter New password">
-                        <input type="password" class="changePassword" name="newPassword" placeholder="Confirm New Password">
-                    <button class="change-button">Confirm</button>
-                </div>
+                    <p class="heading-change">Change password</p>
+                    <div class="change-box">
+                        <input type="password" class="changePassword" name="oldPassword"
+                            placeholder="Enter Current Password">
+                        <input type="password" class="changePassword" name="newPassword"
+                            placeholder="Enter New password">
+                        <input type="password" class="changePassword" name="newPassword"
+                            placeholder="Confirm New Password">
+                        <button class="change-button">Confirm</button>
+                    </div>
                 </form>
             </div>
         </div>
-        </section>
+    </section>
     </div>
-<script src="./static/js/dash.js"></script>
-<!-- icons link -->
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="./static/js/dash.js"></script>
+    <!-- icons link -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
