@@ -53,6 +53,9 @@
 .navbar-item a:hover{
     color:aliceblue ;
 }
+.navbar-item a:active{
+    color:aliceblue ;
+}
 /* .navbar-item a::before{
     background-color: black;
     border:1px solid black;
@@ -218,8 +221,9 @@
     display:flex;
     flex-direction: column;
     width:100%;
-    height:145dvh;
+    /* height:145dvh; */
     background-color: rgba(247, 244, 244, 0.511);
+    padding-bottom: 50px;
 }
 
 .section-heading{
@@ -268,6 +272,14 @@
 .card-photo{
     /* border: 1px solid ; */
     height:190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-photo img{
+    height: 125px;
+    width: auto;
 }
 
 .card-title{
@@ -425,7 +437,7 @@
 #contact{
     /* border:1px solid green; */
     width:100%;
-    height: 100dvh;
+    /* height: 100dvh; */
     background-color: rgba(247, 244, 244, 0.511);
 }
 
@@ -448,7 +460,7 @@
 }
 
 .contact-card{
-    border:1px solid brown;
+    /* border:1px solid brown; */
     display:flex;
     margin-left: 95px;
     margin-right:95px;
@@ -482,7 +494,10 @@
 
 .contact-image{
     /* border:1px solid red; */
-    height:130px; 
+    height:130px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
 }
 
 .contact-title{
@@ -504,23 +519,64 @@
 }
 
 .contactpage-mid{
-    border:1px solid black;
+    /* border:1px solid black; */
     margin-top: 35px;
     display:flex;
+    padding-bottom: 30px;
 }
 
 .contact-left{
-    border:1px solid green;
-    width:50%;
-    
+    /* border:1px solid green; */
+    width:50%;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .contact-right{
-    border:1px solid green;
+    /* border:1px solid blue; */
     width:50%;
 }
 
 .contact-form{
+    /* border: 1px solid yellowgreen; */
     display: flex;
+    flex-direction: column;
     gap:30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.basic-details{
+    /* border:1px solid black; */
+    display: flex;
+    gap:15%;
+    width:70%;
+}
+
+.contact-form input{
+    border:1px solid rgb(142,142,142);
+    font-size: 1 rem;
+    padding:5px;
+    width:70%;
+    height:40px;
+    border-radius: 5px;
+}
+
+.contact-form textarea{
+    border:1px solid rgb(142,142,142);
+    font-size: 1 rem;
+    padding:5px;
+    width:70%;
+    height:90px;
+    border-radius: 5px;
+}
+.contact-form button{
+    width:30%;
+   font-size: 1rem;
+   border-radius: 5px;
+   background-image: linear-gradient(to right, #5a5ab6, #5b51c5, #5a5ab6);
+   color: white;
+   padding: 10px;
+   border:none;
 }
