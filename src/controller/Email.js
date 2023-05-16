@@ -90,6 +90,17 @@ let sendtransferDetail = function(us){
     }
 });
 }
+
+
+// name:
+// email: 
+// Subject: 
+// Message: 
+
+
+
+
+
 module.exports={send,sendUserDetail,sendtransferDetail};
 // console.log(signup_page);
 // button.onclick=function(){
