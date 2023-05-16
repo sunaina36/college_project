@@ -169,5 +169,13 @@ route
 .post('/resetPass',forgetpass.resetpass)
 .post('/forgetpas',forgetpass.forget)
 .post('/changePass',changePass)
+.post('/contactForm',(req,res)=>{
+    let usEmail = req.body.email;
+    let usName = req.body.name;
+    let usSub = req.body.subject;
+    let usMessage = req.body.message;
+    Email.contactForm(usEmail,usName,usSub,usMessage);
+    res.redirect('/');
+})
 
 module.exports={route};

@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    overflow-y: hidden;
 }
 .nav{
     display: flex;
@@ -66,7 +70,6 @@
     position: relative;
     padding-left: 20px;
 }
-
 .clickedNavItem{
     /* background-image: linear-gradient(to bottom, white 100%, #dfe9f3 0%); */
     background-color: white;
@@ -130,14 +133,12 @@
     color: #287bff;
     font-weight: 500;
 }
-
 .profile-photo img{
     /* border: 1px solid palevioletred; */
     height: 50px;
     width: 50px;
     border-radius: 50%;
 }
-
 .left-nav{
     /* border: 1px solid black; */
     width: 50%;
@@ -197,8 +198,7 @@
     /* margin-left: 15px; */
     /* margin-right: 15px; */
     justify-content: space-around;
-    align-items: center;
-    
+    align-items: center;   
 }
 .account-card{
     /* border: 1px solid blue; */
@@ -219,7 +219,6 @@
     text-align: center;
     font-weight: 550;
     color: #222;
-
 }
 .account-card-body{
     /* border: 1px solid rebeccapurple; */
@@ -251,16 +250,14 @@
     padding-top: 10px;
     /* padding-left: 25px; */
     font-size: 20px;
-    text-align: center;
-   
+    text-align: center; 
 }
 .accounts-graphs{
     /* border: 1px solid blueviolet; */
     display: flex;
     /* margin-top: 0px; */
     height: 47dvh;
-    justify-content: space-around;
-    
+    justify-content: space-around;   
 }
 .graph-card{
     /* border: 1px solid black; */

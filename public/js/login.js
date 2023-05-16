@@ -11,7 +11,7 @@ function changeLoginPreference(){
     console.log("j")
     if(emailAndPhoneInput.name=="email")
     {
-        emailAndPhoneInput.name="phoneNumber";
+        // emailAndPhoneInput.name="phoneNumber";
         emailAndPhoneInput.placeholder="Phone Number";
         emailAndPhoneInput.type="text";
         emailAndPhoneInput.pattern="[0-9]{10}";
@@ -20,7 +20,7 @@ function changeLoginPreference(){
     }
     else
     {
-        emailAndPhoneInput.name="email";
+        // emailAndPhoneInput.name="email";
         emailAndPhoneInput.placeholder="Email";
         emailAndPhoneInput.type="email";
         emailAndPhoneInput.pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$";

@@ -146,7 +146,7 @@ fetchData().then((data) => {
         ],
       },
       
-    },
+    }
   });
 
 secondGraph=[];
