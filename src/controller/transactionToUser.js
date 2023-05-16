@@ -24,7 +24,7 @@ let searchUser = async function(req,res){
                     }
                     else{
                         console.log('account dont exist')
-                        req.flash("error", "Account Not exist");
+                        req.flash("error", "Account Does Not exist");
                         res.redirect('/dashboard');
                     }
                     
@@ -61,9 +61,11 @@ let searchUser = async function(req,res){
 // }
 
 let transfferMoney = async function(){
-   await userData.User.findOneAndUpdate({accountNumber:otherUser.accountNumber},{'$inc':{'balance':transferamt},'$push':{'transaction':{name:yourAccount.firstName+yourAccount.secondName,account:yourAccount.accountNumber,transferDate: new Date(),amount:transferamt,status:"credited",}}});
-    await userData.User.findOneAndUpdate({accountNumber:yourAccount.accountNumber},{'$inc':{'balance':-transferamt},'$push':{'transaction':{name:otherUser.firstName+otherUser.secondName,account:otherUser.accountNumber,transferDate: new Date(),amount:transferamt,status:"debited",}}});
-    // Email.sendtransferDetail(otherUser);
-    // Email.sendtransferDetail(yourAccount);
+   let transferDoneby = {name:yourAccount.firstName+yourAccount.secondName,account:yourAccount.accountNumber,transferDate: new Date(),amount:transferamt,status:"credited"};
+   let transferDoneOn ={name:otherUser.firstName+otherUser.secondName,account:otherUser.accountNumber,transferDate: new Date(),amount:transferamt,status:"debited"};
+   await userData.User.findOneAndUpdate({accountNumber:otherUser.accountNumber},{'$inc':{'balance':transferamt},'$push':{'transaction':transferDoneby}});
+    await userData.User.findOneAndUpdate({accountNumber:yourAccount.accountNumber},{'$inc':{'balance':-transferamt},'$push':{'transaction':transferDoneOn}});
+    Email.sendtransferDetail(otherUser,transferDoneby);
+    Email.sendtransferDetail(yourAccount,transferDoneOn);
 }
 module.exports ={searchUser,transfferMoney};

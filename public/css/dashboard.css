@@ -257,8 +257,8 @@
 .accounts-graphs{
     /* border: 1px solid blueviolet; */
     display: flex;
-    margin-top: 30px;
-    height: 40dvh;
+    /* margin-top: 0px; */
+    height: 47dvh;
     justify-content: space-around;
     
 }
@@ -276,12 +276,18 @@
     padding-left: 20px;
     font-size: 20px;
 }
+.graph-card-heading p{
+    text-align: center;
+}
 .graph-card-body{
     /* border: 1px solid orangered; */
     padding-top: 10px;
     padding-left: 20px;
+    margin-bottom: 10px;
     font-size: 20px;
 }
-.graph{
-    border: 1px solid brown;
+.graph-card-body p{
+    text-align: center;
 }
+
+

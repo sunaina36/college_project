@@ -8,7 +8,8 @@ const cards= document.querySelector('#cards');
 const transactionHistory = document.querySelector('#transaction-history');
 const profile = document.querySelector('#Profile');
 const transfer = document.querySelector('#transfer');
-const navArr=[dashboard,transfer,cards,transactionHistory,profile];
+const changePassword = document.querySelector('#password-change');
+const navArr=[dashboard,transfer,cards,transactionHistory,profile,changePassword];
 sideNavItemInsideDiv[0].classList.add('clickedNavItem');
 function sidenav(e){
     for(i=0;i<sideNavItemInsideDiv.length;i++){

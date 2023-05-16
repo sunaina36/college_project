@@ -57,7 +57,7 @@
                         <div class="navItemDiv l"><ion-icon name="person-outline"></ion-icon>Profile</div>
                     </li>
                     <li class="nav-items" onclick="sidenav(this)">
-                        <div class="navItemDiv m"><ion-icon name="person-outline"></ion-icon>Change Password</div>
+                        <div class="navItemDiv m"><ion-icon name="key-outline"></ion-icon></ion-icon>Change Password</div>
                     </li>
                     <li class="nav-items">
                         <form method="post" action="/logout"><ion-icon name="log-out-outline"></ion-icon><input
@@ -131,7 +131,7 @@
                         <p>Overview Of Daily Transaction</p>
                     </div>
                     <div class="graph">
-                        <p></p>
+                        <canvas id="myChart1" style="width:100%"></canvas>
                     </div>
                 </div>
                 <div class="graph-card">
@@ -142,7 +142,7 @@
                         <p>Overview Of Total Cash Flow</p>
                     </div>
                     <div class="graph">
-                        <p></p>
+                        <canvas id="myChart2" style="width:100%"></canvas>
                     </div>
                 </div>
             </div>
@@ -410,12 +410,14 @@
             <div class="mainDiv">
                 <div class="transfer-box">
                     <form  class="transactionForm" method="post" action="/moneyTransfer">
-                    <div class="transfer-form-input">
+                        <h1>Transfer Money</h1>
                         <% if(error){ %>
-                            <span class="message">
+                            <div class="message">
                                 <%= error %>
-                            </span>
+                            </div><br>
                         <% } %>
+                    <div class="transfer-form-input">
+                        
                         <span><img src="./static/images/bank.png"></span>
                         <input type="text" class="accountNumber" name="accountNumber"
                             placeholder="Enter Account Number">
@@ -433,23 +435,32 @@
         <h1 class="section-heading">Change Password</h1>
         <div class="main-content">
             <div class="main-content-box">
-                <form class="change-password-index">
+                <form class="change-password-index" method="post" action="/changePass">
                     <p class="heading-change">Change password</p>
+                    <% if(change){ %>
+                        <span class="message">
+                            <%= change %>
+                        </span>
+                    <% } %>
                     <div class="change-box">
                         <input type="password" class="changePassword" name="oldPassword"
                             placeholder="Enter Current Password">
                         <input type="password" class="changePassword" name="newPassword"
                             placeholder="Enter New password">
-                        <input type="password" class="changePassword" name="newPassword"
+                        <input type="password" class="changePassword" name="confirmPassword"
                             placeholder="Confirm New Password">
-                        <button class="change-button">Confirm</button>
+                        <button class="change-button" type="submit">Confirm</button>
                     </div>
                 </form>
             </div>
         </div>
     </section>
     </div>
-    <script src="./static/js/dash.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="./static/js/dash.js" ></script>
+    <script src="./static/js/chart.js"></script>
+   
+    
     <!-- icons link -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

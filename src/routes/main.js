@@ -5,6 +5,8 @@ const UserData = require('../modals/userdata');
 const userS = require('../controller/users');
 const otpAuth = require('../controller/otpAuth');
 const transactionToUser = require('../controller/transactionToUser');
+const graph = require('../controller/backendChart');
+const changePass = require('../controller/changePass');
 const forgetpass= require('../controller/forgetPass');
 const otp = require('../controller/otp');
 const path = require('path');
@@ -41,7 +43,7 @@ route
 //     res.render('dashboard.ejs');
 // })
 .get('/dashboard',loginAuth.isAuth,(req,res)=>{
-    res.render('dashboard.ejs',{users:req.user,error:req.flash('error')});
+    res.render('dashboard.ejs',{users:req.user,error:req.flash('error'),change:req.flash('change')});
 })
 // .get('/test',loginAuth.isAuth,(req,res)=>{
 //     req.session.test?req.session.test++:req.session.test=1;
@@ -59,6 +61,7 @@ route
 .get('/forgetPassOtp',(req,res)=>{
     res.render('forgetPassOtp',{wrongforgetOtp:req.flash('wrongforgetOtp')});
 })
+.get('/graph',graph)
 .post('/signup',otpAuth)
 .post('/otp', async(req,res)=>{
     let userOTP = req.body.otp;
@@ -165,5 +168,6 @@ route
 .post('/forgetPassOtp',forgetpass.forgetpassotp)
 .post('/resetPass',forgetpass.resetpass)
 .post('/forgetpas',forgetpass.forget)
+.post('/changePass',changePass)
 
 module.exports={route};
