@@ -157,10 +157,10 @@ secondGraph.push(data[5]);
 new Chart("myChart2", {
   type: "pie",
   data: {
-    labels: ['Total Debited','Total Credited','Total balance'],
+    labels: ['Total Credited','Total Debited','Total balance'],
     datasets: [{
       data: secondGraph,
-      backgroundColor: ['red','green','blue'],
+      backgroundColor: ['green','red','blue'],
     },]
   }
 });
