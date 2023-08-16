@@ -86,7 +86,7 @@ console.log(window.location.href);
 
 async function fetchData() {
   try {
-    const response = await fetch("http://localhost:5550/graph");
+    const response = await fetch("https://onlinebankingwebsite.onrender.com/graph");
     if (!response.ok) {
       // check if response went through
       throw new Error("HTTP error " + response.status);
@@ -145,25 +145,25 @@ fetchData().then((data) => {
           },
         ],
       },
-      
+
     }
   });
 
-secondGraph=[];
-secondGraph.push(data[3]);
-secondGraph.push(data[4]);
-secondGraph.push(data[5]);
+  secondGraph = [];
+  secondGraph.push(data[3]);
+  secondGraph.push(data[4]);
+  secondGraph.push(data[5]);
 
-new Chart("myChart2", {
-  type: "pie",
-  data: {
-    labels: ['Total Credited','Total Debited','Total balance'],
-    datasets: [{
-      data: secondGraph,
-      backgroundColor: ['green','red','blue'],
-    },]
-  }
-});
+  new Chart("myChart2", {
+    type: "pie",
+    data: {
+      labels: ['Total Credited', 'Total Debited', 'Total balance'],
+      datasets: [{
+        data: secondGraph,
+        backgroundColor: ['green', 'red', 'blue'],
+      },]
+    }
+  });
   console.log(data);
 });
 // console.log(data);
