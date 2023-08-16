@@ -2,6 +2,8 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Lato', sans-serif;
 }
 
 .nav{
@@ -15,13 +17,13 @@
 
 .left-navbar{
     /* border: 1px solid red; */
-    width:40%;
+    width:38%;
     height: 100%;
 }
 
 .right-navbar{
     /* border: 1px solid green; */
-    width:60%;
+    width:62%;
     height:100%;
 }
 
@@ -65,14 +67,14 @@
     width:100%;
 } */
 .navbar-item .hbuttons{
-    border:2px solid white;
-    border-radius: 20px;
-    padding-top: 8px;
-    width:100px;
+    border:2px solid rgba(240, 248, 255, 0.7);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:125px;
     height:45px;
-    text-align: center;
-    color: white;
-    /* background-color: black; */
+    /* color: white; */
 }
 #home{
     /* border: 1px solid red; */
@@ -106,9 +108,10 @@
 .home-items h5{
     /* border:1px solid green; */
     color: rgba(239, 242, 244, 0.927);
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 45px;
+    font-family: 'Dancing Script', 'cursive';
 }
 .home-buttons{
     /* border:1px solid green; */
@@ -118,7 +121,7 @@
 
 .home-buttons a{
     width:30%;
-    height:40px;
+    height:45px;
 }
 
 .home-buttons a button{
@@ -126,7 +129,7 @@
     height:100%;
     background-color: transparent;
     border: 2px solid white;      
-    border-radius: 20px;
+    border-radius: 10px;
     color:floralwhite;
     font-size: 1.15rem;
     cursor: pointer;  
@@ -372,7 +375,7 @@
     width:100%;
     /* height:140dvh; */
     background-color: rgba(56, 56, 240, 0.868);
-    padding-bottom: 50px;
+    padding-bottom: 80px;
 }
 
 .faq-heading{
@@ -380,7 +383,7 @@
     text-align: center;
     font-size: 3rem;
     font-weight: 900;
-    padding-top:150px;
+    padding-top:80px;
     color: floralwhite;
 }
 
@@ -388,7 +391,7 @@
     /* border:1px solid red; */
     display:flex;
     flex-direction: column;
-    gap:20px;
+    gap:30px;
     margin-top: 50px;
     margin-left: 300px;
     margin-right: 300px;
@@ -451,7 +454,7 @@
 
 .contact-paragraph{
     /* border:1px solid blue; */
-    margin-top:20px;
+    margin-top:50px;
     margin-left:100px;
     margin-right:100px;
     text-align: center;
@@ -462,17 +465,15 @@
 .contact-card{
     /* border:1px solid brown; */
     display:flex;
-    margin-left: 95px;
-    margin-right:95px;
-    padding-top: 30px;
-    gap:20px
+    justify-content: center;
+    margin:50px 0;
 }
 
 .address-card{
     /* border:1px solid black; */
     display: flex;
     flex-direction: column;
-    width:50%;
+    width:25%;
     background-color: white;
 }
 
@@ -520,9 +521,9 @@
 
 .contactpage-mid{
     /* border:1px solid black; */
-    margin-top: 35px;
+    margin-top: 80px;
     display:flex;
-    padding-bottom: 30px;
+    margin-bottom: 80px;
 }
 
 .contact-left{
@@ -578,6 +579,7 @@
    background-image: linear-gradient(to right, #5a5ab6, #5b51c5, #5a5ab6);
    color: white;
    padding: 10px;
+   margin-top: 30px;
    border:none;
    cursor: pointer;
 }
